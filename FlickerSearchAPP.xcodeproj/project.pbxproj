@@ -59,8 +59,6 @@
 		BEA224E322B69781006A3C32 /* FlickerSearchAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerSearchAPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA224E722B69781006A3C32 /* FlickerSearchAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerSearchAPPTests.swift; sourceTree = "<group>"; };
 		BEA224E922B69781006A3C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEA224F222B69781006A3C32 /* FlickerSearchAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerSearchAPPUITests.swift; sourceTree = "<group>"; };
-		BEA224F422B69781006A3C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCAA3891778DF7FB9E26BA51 /* Pods_FlickerSearchAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickerSearchAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -151,7 +149,6 @@
 			children = (
 				BEA224CE22B6977F006A3C32 /* FlickerSearchAPP */,
 				BEA224E622B69781006A3C32 /* FlickerSearchAPPTests */,
-				BEA224F122B69781006A3C32 /* FlickerSearchAPPUITests */,
 				BEA224CD22B6977F006A3C32 /* Products */,
 				AF794A814B212627A749467F /* Pods */,
 				03C9474058798761840B3D73 /* Frameworks */,
@@ -193,15 +190,6 @@
 				BEA224E922B69781006A3C32 /* Info.plist */,
 			);
 			path = FlickerSearchAPPTests;
-			sourceTree = "<group>";
-		};
-		BEA224F122B69781006A3C32 /* FlickerSearchAPPUITests */ = {
-			isa = PBXGroup;
-			children = (
-				BEA224F222B69781006A3C32 /* FlickerSearchAPPUITests.swift */,
-				BEA224F422B69781006A3C32 /* Info.plist */,
-			);
-			path = FlickerSearchAPPUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
