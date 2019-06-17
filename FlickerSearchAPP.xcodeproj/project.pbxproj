@@ -1,0 +1,675 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E43E70E7C56494C09DA48B9 /* Pods_FlickerSearchAPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DEE16BB0FBEAC7912B00C23 /* Pods_FlickerSearchAPPTests.framework */; };
+		AD3D61A8D3709EC46C4DC68D /* Pods_FlickerSearchAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAA3891778DF7FB9E26BA51 /* Pods_FlickerSearchAPP.framework */; };
+		BE1CB48622B7994B008C60D1 /* NetworkManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48522B7994B008C60D1 /* NetworkManger.swift */; };
+		BE1CB48922B79D71008C60D1 /* ImageRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48822B79D71008C60D1 /* ImageRepo.swift */; };
+		BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48B22B7AE3E008C60D1 /* Constant.swift */; };
+		BE1D42D422B7FB4F001601F1 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42D322B7FB4F001601F1 /* ErrorModel.swift */; };
+		BE1D42D722B7FC0B001601F1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42D622B7FC0B001601F1 /* Data.swift */; };
+		BE1D42D922B812A8001601F1 /* RequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42D822B812A8001601F1 /* RequestWrapper.swift */; };
+		BE1D42DB22B81441001601F1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42DA22B81441001601F1 /* Photo.swift */; };
+		BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224CF22B6977F006A3C32 /* AppDelegate.swift */; };
+		BEA224D222B6977F006A3C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224D122B6977F006A3C32 /* ViewController.swift */; };
+		BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D322B6977F006A3C32 /* Main.storyboard */; };
+		BEA224D822B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEA224D622B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld */; };
+		BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D922B69781006A3C32 /* Assets.xcassets */; };
+		BEA224DD22B69781006A3C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224DB22B69781006A3C32 /* LaunchScreen.storyboard */; };
+		BEA224E822B69781006A3C32 /* FlickerSearchAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224E722B69781006A3C32 /* FlickerSearchAPPTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BEA224E422B69781006A3C32 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BEA224C422B6977F006A3C32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BEA224CB22B6977F006A3C32;
+			remoteInfo = FlickerSearchAPP;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		75FD78D47900A8C00A6D7FF5 /* Pods-FlickerSearchAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerSearchAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerSearchAPP/Pods-FlickerSearchAPP.debug.xcconfig"; sourceTree = "<group>"; };
+		8C06ED8F677805CF67789DAE /* Pods-FlickerSearchAPPTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerSearchAPPTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerSearchAPPTests/Pods-FlickerSearchAPPTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E3066CA28CDCBA6C2872965 /* Pods-FlickerSearchAPPTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerSearchAPPTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerSearchAPPTests/Pods-FlickerSearchAPPTests.release.xcconfig"; sourceTree = "<group>"; };
+		9DEE16BB0FBEAC7912B00C23 /* Pods_FlickerSearchAPPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickerSearchAPPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6E4CC6B68A73DA6E282886F /* Pods-FlickerSearchAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerSearchAPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerSearchAPP/Pods-FlickerSearchAPP.release.xcconfig"; sourceTree = "<group>"; };
+		BE1CB48522B7994B008C60D1 /* NetworkManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManger.swift; sourceTree = "<group>"; };
+		BE1CB48822B79D71008C60D1 /* ImageRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepo.swift; sourceTree = "<group>"; };
+		BE1CB48B22B7AE3E008C60D1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		BE1D42D322B7FB4F001601F1 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		BE1D42D622B7FC0B001601F1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		BE1D42D822B812A8001601F1 /* RequestWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWrapper.swift; sourceTree = "<group>"; };
+		BE1D42DA22B81441001601F1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerSearchAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA224CF22B6977F006A3C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BEA224D122B6977F006A3C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BEA224D422B6977F006A3C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BEA224D722B6977F006A3C32 /* FlickerSearchAPP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlickerSearchAPP.xcdatamodel; sourceTree = "<group>"; };
+		BEA224D922B69781006A3C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BEA224DC22B69781006A3C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BEA224DE22B69781006A3C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA224E322B69781006A3C32 /* FlickerSearchAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerSearchAPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BEA224E722B69781006A3C32 /* FlickerSearchAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerSearchAPPTests.swift; sourceTree = "<group>"; };
+		BEA224E922B69781006A3C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA224F222B69781006A3C32 /* FlickerSearchAPPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerSearchAPPUITests.swift; sourceTree = "<group>"; };
+		BEA224F422B69781006A3C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCAA3891778DF7FB9E26BA51 /* Pods_FlickerSearchAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickerSearchAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BEA224C922B6977F006A3C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD3D61A8D3709EC46C4DC68D /* Pods_FlickerSearchAPP.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEA224E022B69781006A3C32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E43E70E7C56494C09DA48B9 /* Pods_FlickerSearchAPPTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03C9474058798761840B3D73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FCAA3891778DF7FB9E26BA51 /* Pods_FlickerSearchAPP.framework */,
+				9DEE16BB0FBEAC7912B00C23 /* Pods_FlickerSearchAPPTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF794A814B212627A749467F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75FD78D47900A8C00A6D7FF5 /* Pods-FlickerSearchAPP.debug.xcconfig */,
+				B6E4CC6B68A73DA6E282886F /* Pods-FlickerSearchAPP.release.xcconfig */,
+				8C06ED8F677805CF67789DAE /* Pods-FlickerSearchAPPTests.debug.xcconfig */,
+				8E3066CA28CDCBA6C2872965 /* Pods-FlickerSearchAPPTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE1CB48022B796D1008C60D1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BE1CB48522B7994B008C60D1 /* NetworkManger.swift */,
+				BE1D42D822B812A8001601F1 /* RequestWrapper.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BE1CB48722B79D59008C60D1 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				BE1CB48822B79D71008C60D1 /* ImageRepo.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		BE1CB48A22B7AE32008C60D1 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BE1CB48B22B7AE3E008C60D1 /* Constant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		BE1D42D222B7FB38001601F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE1D42D322B7FB4F001601F1 /* ErrorModel.swift */,
+				BE1D42DA22B81441001601F1 /* Photo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BE1D42D522B7FBF9001601F1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BE1D42D622B7FC0B001601F1 /* Data.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		BEA224C322B6977F006A3C32 = {
+			isa = PBXGroup;
+			children = (
+				BEA224CE22B6977F006A3C32 /* FlickerSearchAPP */,
+				BEA224E622B69781006A3C32 /* FlickerSearchAPPTests */,
+				BEA224F122B69781006A3C32 /* FlickerSearchAPPUITests */,
+				BEA224CD22B6977F006A3C32 /* Products */,
+				AF794A814B212627A749467F /* Pods */,
+				03C9474058798761840B3D73 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		BEA224CD22B6977F006A3C32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */,
+				BEA224E322B69781006A3C32 /* FlickerSearchAPPTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BEA224CE22B6977F006A3C32 /* FlickerSearchAPP */ = {
+			isa = PBXGroup;
+			children = (
+				BE1D42D522B7FBF9001601F1 /* Extension */,
+				BE1D42D222B7FB38001601F1 /* Model */,
+				BE1CB48A22B7AE32008C60D1 /* Constants */,
+				BE1CB48722B79D59008C60D1 /* Repo */,
+				BE1CB48022B796D1008C60D1 /* Network */,
+				BEA224CF22B6977F006A3C32 /* AppDelegate.swift */,
+				BEA224D122B6977F006A3C32 /* ViewController.swift */,
+				BEA224D322B6977F006A3C32 /* Main.storyboard */,
+				BEA224D922B69781006A3C32 /* Assets.xcassets */,
+				BEA224DB22B69781006A3C32 /* LaunchScreen.storyboard */,
+				BEA224DE22B69781006A3C32 /* Info.plist */,
+				BEA224D622B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld */,
+			);
+			path = FlickerSearchAPP;
+			sourceTree = "<group>";
+		};
+		BEA224E622B69781006A3C32 /* FlickerSearchAPPTests */ = {
+			isa = PBXGroup;
+			children = (
+				BEA224E722B69781006A3C32 /* FlickerSearchAPPTests.swift */,
+				BEA224E922B69781006A3C32 /* Info.plist */,
+			);
+			path = FlickerSearchAPPTests;
+			sourceTree = "<group>";
+		};
+		BEA224F122B69781006A3C32 /* FlickerSearchAPPUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BEA224F222B69781006A3C32 /* FlickerSearchAPPUITests.swift */,
+				BEA224F422B69781006A3C32 /* Info.plist */,
+			);
+			path = FlickerSearchAPPUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BEA224CB22B6977F006A3C32 /* FlickerSearchAPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEA224F722B69781006A3C32 /* Build configuration list for PBXNativeTarget "FlickerSearchAPP" */;
+			buildPhases = (
+				5A953B4C56A253CD2F2A65A3 /* [CP] Check Pods Manifest.lock */,
+				BEA224C822B6977F006A3C32 /* Sources */,
+				BEA224C922B6977F006A3C32 /* Frameworks */,
+				BEA224CA22B6977F006A3C32 /* Resources */,
+				7F5D5600C1FC0AB639ABC246 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlickerSearchAPP;
+			productName = FlickerSearchAPP;
+			productReference = BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BEA224E222B69781006A3C32 /* FlickerSearchAPPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BEA224FA22B69781006A3C32 /* Build configuration list for PBXNativeTarget "FlickerSearchAPPTests" */;
+			buildPhases = (
+				0A71E1C56A796925F9D6A22E /* [CP] Check Pods Manifest.lock */,
+				BEA224DF22B69781006A3C32 /* Sources */,
+				BEA224E022B69781006A3C32 /* Frameworks */,
+				BEA224E122B69781006A3C32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BEA224E522B69781006A3C32 /* PBXTargetDependency */,
+			);
+			name = FlickerSearchAPPTests;
+			productName = FlickerSearchAPPTests;
+			productReference = BEA224E322B69781006A3C32 /* FlickerSearchAPPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BEA224C422B6977F006A3C32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = AvaVaas;
+				TargetAttributes = {
+					BEA224CB22B6977F006A3C32 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					BEA224E222B69781006A3C32 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BEA224CB22B6977F006A3C32;
+					};
+				};
+			};
+			buildConfigurationList = BEA224C722B6977F006A3C32 /* Build configuration list for PBXProject "FlickerSearchAPP" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BEA224C322B6977F006A3C32;
+			productRefGroup = BEA224CD22B6977F006A3C32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BEA224CB22B6977F006A3C32 /* FlickerSearchAPP */,
+				BEA224E222B69781006A3C32 /* FlickerSearchAPPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BEA224CA22B6977F006A3C32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEA224DD22B69781006A3C32 /* LaunchScreen.storyboard in Resources */,
+				BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */,
+				BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEA224E122B69781006A3C32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A71E1C56A796925F9D6A22E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlickerSearchAPPTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5A953B4C56A253CD2F2A65A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlickerSearchAPP-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F5D5600C1FC0AB639ABC246 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FlickerSearchAPP/Pods-FlickerSearchAPP-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FlickerSearchAPP/Pods-FlickerSearchAPP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BEA224C822B6977F006A3C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE1D42D422B7FB4F001601F1 /* ErrorModel.swift in Sources */,
+				BE1CB48622B7994B008C60D1 /* NetworkManger.swift in Sources */,
+				BEA224D222B6977F006A3C32 /* ViewController.swift in Sources */,
+				BE1D42D722B7FC0B001601F1 /* Data.swift in Sources */,
+				BE1D42DB22B81441001601F1 /* Photo.swift in Sources */,
+				BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */,
+				BEA224D822B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld in Sources */,
+				BE1D42D922B812A8001601F1 /* RequestWrapper.swift in Sources */,
+				BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */,
+				BE1CB48922B79D71008C60D1 /* ImageRepo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BEA224DF22B69781006A3C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BEA224E822B69781006A3C32 /* FlickerSearchAPPTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BEA224E522B69781006A3C32 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BEA224CB22B6977F006A3C32 /* FlickerSearchAPP */;
+			targetProxy = BEA224E422B69781006A3C32 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BEA224D322B6977F006A3C32 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEA224D422B6977F006A3C32 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BEA224DB22B69781006A3C32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BEA224DC22B69781006A3C32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BEA224F522B69781006A3C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BEA224F622B69781006A3C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BEA224F822B69781006A3C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75FD78D47900A8C00A6D7FF5 /* Pods-FlickerSearchAPP.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 959HZ67CJ8;
+				INFOPLIST_FILE = FlickerSearchAPP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.VUI.VUIComponents.revamp.FlickerSearchAPP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BEA224F922B69781006A3C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6E4CC6B68A73DA6E282886F /* Pods-FlickerSearchAPP.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 959HZ67CJ8;
+				INFOPLIST_FILE = FlickerSearchAPP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.VUI.VUIComponents.revamp.FlickerSearchAPP;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BEA224FB22B69781006A3C32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C06ED8F677805CF67789DAE /* Pods-FlickerSearchAPPTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 959HZ67CJ8;
+				INFOPLIST_FILE = FlickerSearchAPPTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.VUI.VUIComponents.revamp.FlickerSearchAPPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickerSearchAPP.app/FlickerSearchAPP";
+			};
+			name = Debug;
+		};
+		BEA224FC22B69781006A3C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E3066CA28CDCBA6C2872965 /* Pods-FlickerSearchAPPTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 959HZ67CJ8;
+				INFOPLIST_FILE = FlickerSearchAPPTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.VUI.VUIComponents.revamp.FlickerSearchAPPTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlickerSearchAPP.app/FlickerSearchAPP";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BEA224C722B6977F006A3C32 /* Build configuration list for PBXProject "FlickerSearchAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEA224F522B69781006A3C32 /* Debug */,
+				BEA224F622B69781006A3C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEA224F722B69781006A3C32 /* Build configuration list for PBXNativeTarget "FlickerSearchAPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEA224F822B69781006A3C32 /* Debug */,
+				BEA224F922B69781006A3C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BEA224FA22B69781006A3C32 /* Build configuration list for PBXNativeTarget "FlickerSearchAPPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BEA224FB22B69781006A3C32 /* Debug */,
+				BEA224FC22B69781006A3C32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BEA224D622B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BEA224D722B6977F006A3C32 /* FlickerSearchAPP.xcdatamodel */,
+			);
+			currentVersion = BEA224D722B6977F006A3C32 /* FlickerSearchAPP.xcdatamodel */;
+			path = FlickerSearchAPP.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BEA224C422B6977F006A3C32 /* Project object */;
+}
