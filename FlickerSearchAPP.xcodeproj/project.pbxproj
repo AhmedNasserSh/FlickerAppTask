@@ -16,6 +16,8 @@
 		BE1D42D722B7FC0B001601F1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42D622B7FC0B001601F1 /* Data.swift */; };
 		BE1D42D922B812A8001601F1 /* RequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42D822B812A8001601F1 /* RequestWrapper.swift */; };
 		BE1D42DB22B81441001601F1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42DA22B81441001601F1 /* Photo.swift */; };
+		BE1D42DD22B81B66001601F1 /* BaseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42DC22B81B66001601F1 /* BaseRepo.swift */; };
+		BE1D42E222B81DA9001601F1 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42E122B81DA9001601F1 /* BaseModel.swift */; };
 		BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224CF22B6977F006A3C32 /* AppDelegate.swift */; };
 		BEA224D222B6977F006A3C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224D122B6977F006A3C32 /* ViewController.swift */; };
 		BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D322B6977F006A3C32 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		BE1D42D622B7FC0B001601F1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		BE1D42D822B812A8001601F1 /* RequestWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestWrapper.swift; sourceTree = "<group>"; };
 		BE1D42DA22B81441001601F1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		BE1D42DC22B81B66001601F1 /* BaseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepo.swift; sourceTree = "<group>"; };
+		BE1D42E122B81DA9001601F1 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerSearchAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA224CF22B6977F006A3C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA224D122B6977F006A3C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 		BE1CB48722B79D59008C60D1 /* Repo */ = {
 			isa = PBXGroup;
 			children = (
+				BE1D42DC22B81B66001601F1 /* BaseRepo.swift */,
 				BE1CB48822B79D71008C60D1 /* ImageRepo.swift */,
 			);
 			path = Repo;
@@ -130,6 +135,7 @@
 		BE1D42D222B7FB38001601F1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BE1D42E122B81DA9001601F1 /* BaseModel.swift */,
 				BE1D42D322B7FB4F001601F1 /* ErrorModel.swift */,
 				BE1D42DA22B81441001601F1 /* Photo.swift */,
 			);
@@ -338,6 +344,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -348,6 +355,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -365,7 +373,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1D42DD22B81B66001601F1 /* BaseRepo.swift in Sources */,
 				BE1D42D422B7FB4F001601F1 /* ErrorModel.swift in Sources */,
+				BE1D42E222B81DA9001601F1 /* BaseModel.swift in Sources */,
 				BE1CB48622B7994B008C60D1 /* NetworkManger.swift in Sources */,
 				BEA224D222B6977F006A3C32 /* ViewController.swift in Sources */,
 				BE1D42D722B7FC0B001601F1 /* Data.swift in Sources */,

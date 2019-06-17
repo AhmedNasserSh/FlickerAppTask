@@ -8,10 +8,10 @@
 
 import Foundation
 import ObjectMapper
-class PhotoSearchItem :Mappable  {
+class PhotoSearchItem :BaseModel  {
     var photos : PhotoResponse?
-    required init?(map: Map) { }
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
+        super.mapping(map: map)
         photos <- map["photos"]
     }
 }

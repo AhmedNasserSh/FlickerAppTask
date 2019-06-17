@@ -9,7 +9,6 @@
 import Foundation
 import Moya
 import ObjectMapper
-typealias apiCompleation =  (_ success: Bool, _ dataModel: Mappable) -> Void
 let moyaProvider = MoyaProvider<FlickerAPIService>()
 enum FlickerAPIService {
     case getImages(query:String,page:Int)

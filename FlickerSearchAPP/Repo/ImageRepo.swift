@@ -10,9 +10,10 @@ import Foundation
 import RxSwift
 import Moya
 import ObjectMapper
-class ImageRepo {
+class ImageRepo :BaseRepo<PhotoSearchItem>{
     static let disposeBag = DisposeBag()
-    static func getImagesByQuery(query:String,completion:@escaping apiCompleation) {
+    
+    static func getImagesByQuery(query:String,completion:@escaping ApiHandler) {
         print(url(route: FlickerAPIService.getImages(query: query, page: 1)))
         moyaProvider
             .rx
@@ -20,12 +21,10 @@ class ImageRepo {
             .filterSuccessfulStatusCodes()
             .mapJSON()
             .subscribe(onSuccess: { (json) in
-                if let images = Mapper<PhotoSearchItem>().map(JSONObject: json) {
-                    completion(true,images)
-                }
+                self.handleResult(json, completion: completion)
             }) { (error) in
-                print(error)
-            }.disposed(by: disposeBag)
+                completion(false,nil)
+            }
+            .disposed(by: disposeBag)
     }
 }
-
