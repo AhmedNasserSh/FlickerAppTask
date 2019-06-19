@@ -8,6 +8,9 @@
 
 import Foundation
 import ObjectMapper
+enum PhotoState {
+    case new, downloaded, failed
+}
 class PhotoSearchItem :BaseModel  {
     var photos : PhotoResponse?
     override func mapping(map: Map) {
@@ -33,6 +36,8 @@ class Photo : Mappable {
     var id : String?
     var server : String?
     var secret : String?
+    var image :UIImage?
+    var state :PhotoState?
     required init?(map: Map) { }
     func mapping(map: Map) {
         farm <- map["farm"]
@@ -41,15 +46,11 @@ class Photo : Mappable {
         secret <- map["secret"]
     }
 
-//    func flickrImageURL(_ size:String = "m") -> URL? {
-//        if let url =  URL(string: "https://farm\(farm).staticflickr.com/\(server)/\(photoID)_\(secret)_\(size).jpg") {
-//            return url
-//        }
-//        return nil
-//    }
-    
+    func getImageURL(_ size:String = "m") -> URL? {
+        guard let f = farm , let s = server ,let i = id ,let c = secret else{ return nil}
+        if let url =  URL(string: "https://farm\(f).staticflickr.com/\(s)/\(i)_\(c)_\(size).jpg") {
+            return url
+        }
+        return nil
+    }
 }
-//
-//func == (lhs: FlickrPhoto, rhs: FlickrPhoto) -> Bool {
-//    return lhs.photoID == rhs.photoID
-//}

@@ -14,17 +14,13 @@ class ImageRepo :BaseRepo<PhotoSearchItem>{
     static let disposeBag = DisposeBag()
     
     static func getImagesByQuery(query:String,completion:@escaping ApiHandler) {
-        print(url(route: FlickerAPIService.getImages(query: query, page: 1)))
         moyaProvider
             .rx
             .request(.getImages(query: query, page: 1))
-            .filterSuccessfulStatusCodes()
             .mapJSON()
             .subscribe(onSuccess: { (json) in
                 self.handleResult(json, completion: completion)
-            }) { (error) in
-                completion(false,nil)
-            }
+            }) { (error) in completion(false,nil)}
             .disposed(by: disposeBag)
     }
 }

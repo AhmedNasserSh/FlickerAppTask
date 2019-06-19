@@ -8,13 +8,12 @@
 
 import Foundation
 class RequestWrapper {
-    static func getBody(service :FlickerAPIService) -> [String:Any] {
+    static func getBody(service :FlickerAPIManger) -> [String:Any] {
         switch service {
         case .getImages(let query,let page):
             return  ["method": APIConstant.SEARCH_METHOD, "api_key": APIConstant.flickerApiKey, "tags":query, "format":"json", "nojsoncallback": 1 ,"per_page" :20,"page":page]
         case .getGroups(let query):
             return  ["method": APIConstant.SEARCH_METHOD, "api_key": APIConstant.flickerApiKey, "tags":query, "format":"json", "nojsoncallback": 1 ,"per_page" :20,"page":1]
-        
         }
     }
 }

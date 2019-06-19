@@ -9,28 +9,15 @@
 import Foundation
 
 import ObjectMapper
-typealias ApiHandler =  (_ success: Bool, _ dataModel: Mappable?) -> Void
+typealias ApiHandler =  (_ success: Bool, _ dataModel: BaseModel?) -> Void
 class BaseRepo<T> where T:BaseModel {
     static func handleResult(_ json:Any?,completion:ApiHandler) {
         let model = Mapper<T>().map(JSONObject: json)
-        var error = 0
-        switch model?.statCode {
-        case nil:
-            error = 0
-            break
-        default: break
-        }
-        if error == 0 {
+        if model?.statCode == nil {
             completion(true,model)
         }else{
-            
+            print(model?.message ?? "Unknown Error")
         }
-    }
-    func error(_ ecode:Int) ->String {
-        if ecode == 401 {
-            return "Not Authorized"
-        }
-        return "Ops"
     }
 }
 

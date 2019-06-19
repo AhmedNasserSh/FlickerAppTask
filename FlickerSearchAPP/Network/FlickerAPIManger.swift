@@ -1,5 +1,5 @@
 //
-//  NetworkManger.swift
+//  FlickerAPIManger.swift
 //  FlickerSearchAPP
 //
 //  Created by Ahmed Nasser on 6/17/19.
@@ -9,12 +9,12 @@
 import Foundation
 import Moya
 import ObjectMapper
-let moyaProvider = MoyaProvider<FlickerAPIService>()
-enum FlickerAPIService {
+let moyaProvider = MoyaProvider<FlickerAPIManger>()
+enum FlickerAPIManger {
     case getImages(query:String,page:Int)
     case getGroups(query: String)
 }
-extension FlickerAPIService: TargetType {
+extension FlickerAPIManger: TargetType {
     var task: Task {
         if let requestParameters = parameters {
             return .requestParameters(parameters: requestParameters, encoding: parameterEncoding)
