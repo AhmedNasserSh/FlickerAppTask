@@ -1,5 +1,5 @@
 //
-//  RequestWrapper.swift
+//  FlickerRequestWrapper.swift
 //  FlickerSearchAPP
 //
 //  Created by Ahmed Nasser on 6/17/19.
@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class RequestWrapper {
+class FlickerRequestWrapper {
     static func getBody(service :FlickerAPIManger) -> [String:Any] {
         switch service {
         case .getImages(let query,let page):

@@ -28,7 +28,7 @@ extension FlickerAPIManger: TargetType {
         ]
     }
     // set the base url and paths for each endpoints
-    var baseURL : URL { return URL(string: APIConstant.baseURL)! }
+    var baseURL : URL { return URL(string: APIConstant.baseURL)!}
     var path: String { return "" }
     // define the method use
     var method: Moya.Method {
@@ -36,7 +36,7 @@ extension FlickerAPIManger: TargetType {
     }
     // parameters if needed
     var parameters: [String: Any]? {
-        return RequestWrapper.getBody(service: self)
+        return FlickerRequestWrapper.getBody(service: self)
     }
     // encoding parameter in json or default
     var parameterEncoding: Moya.ParameterEncoding {

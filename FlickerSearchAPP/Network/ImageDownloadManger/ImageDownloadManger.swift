@@ -21,19 +21,27 @@ class ImageDownloadManger {
         = OperationQueueScheduler(operationQueue: downloadQueue)
     let imageCache = NSCache<NSString, UIImage>()
     var bag = DisposeBag()
-    func getImageTask(url :String,completion :@escaping (UIImage) -> ())  {
+    let session = URLSession.shared
+}
+// Mark : Downloader
+extension ImageDownloadManger {
+    func getImageTask(photo :Photo) -> Observable<UIImage>?  {
         let observer =  Observable<UIImage>.create { (observer) -> Disposable in
-            let session = URLSession.shared
-           // guard let url = photo.getImageURL()  else{return}
-            if let cachedImage = self.imageCache.object(forKey: url as NSString) {
+            guard let url = photo.getImageURL()  else{
+                observer.onError(NSError(domain: "", code: 404, userInfo: nil))
+                return Disposables.create()
+            }
+            //check for image in cache
+            if let cachedImage = self.imageCache.object(forKey: url.absoluteString as NSString) {
+                print(":cach")
                 observer.onNext(cachedImage)
             }else{
-                let task =  session.downloadTask(with: URL(string: url)!) { (location, response, error) in
+                // download the image
+                let task =  self.session.downloadTask(with: url) { (location, response, error) in
                     if let locationUrl = location, let data = try? Data(contentsOf: locationUrl){
                         let image = UIImage(data: data)
-                        self.imageCache.setObject(image!, forKey: url as NSString)
+                        self.imageCache.setObject(image!, forKey: url.absoluteString as NSString)
                         observer.onNext(image!)
-                        // self.downloadHandler?(image,self.imageUrl, self.indexPath,error)
                     }else if let e = error{
                         observer.onError(e)
                     }
@@ -43,21 +51,8 @@ class ImageDownloadManger {
                     task.cancel()
                 }
             }
-            return Disposables.create { }
+            return Disposables.create()
         }
-        observer.subscribeOn(backgroundWorkScheduler)
-            .distinctUntilChanged()
-            .observeOn(MainScheduler.asyncInstance)
-            .retry(1)
-            .subscribe(onNext: { (image) in
-                completion(image)
-                print(image)
-            }, onError: { (error) in
-                print("e")
-            }, onCompleted: {
-                print("c")
-            }, onDisposed: {
-                print("d")
-            })
+        return observer
     }
 }
