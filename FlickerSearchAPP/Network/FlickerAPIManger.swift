@@ -13,6 +13,7 @@ let moyaProvider = MoyaProvider<FlickerAPIManger>()
 enum FlickerAPIManger {
     case getImages(query:String,page:Int)
     case getGroups(query: String)
+    case downloadImage(url:URL)
 }
 extension FlickerAPIManger: TargetType {
     var task: Task {
@@ -28,7 +29,14 @@ extension FlickerAPIManger: TargetType {
         ]
     }
     // set the base url and paths for each endpoints
-    var baseURL : URL { return URL(string: APIConstant.baseURL)!}
+    var baseURL : URL {
+        switch self  {
+        case .downloadImage(let url):
+            return url
+        default:
+            return URL(string: APIConstant.baseURL)!
+        }
+    }
     var path: String { return "" }
     // define the method use
     var method: Moya.Method {

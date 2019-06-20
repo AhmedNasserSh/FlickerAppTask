@@ -27,6 +27,7 @@ class ImageDownloadManger {
 extension ImageDownloadManger {
     func getImageTask(photo :Photo) -> Observable<UIImage>?  {
         let observer =  Observable<UIImage>.create { (observer) -> Disposable in
+            // image not found 
             guard let url = photo.getImageURL()  else{
                 observer.onError(NSError(domain: "", code: 404, userInfo: nil))
                 return Disposables.create()
@@ -37,19 +38,16 @@ extension ImageDownloadManger {
                 observer.onNext(cachedImage)
             }else{
                 // download the image
-                let task =  self.session.downloadTask(with: url) { (location, response, error) in
-                    if let locationUrl = location, let data = try? Data(contentsOf: locationUrl){
-                        let image = UIImage(data: data)
+                    moyaProvider
+                    .rx
+                    .request(.downloadImage(url: url))
+                    .mapImage()
+                    .subscribe(onSuccess: { (image) in
                         self.imageCache.setObject(image!, forKey: url.absoluteString as NSString)
                         observer.onNext(image!)
-                    }else if let e = error{
-                        observer.onError(e)
-                    }
-                }
-                task.resume()
-                return Disposables.create {
-                    task.cancel()
-                }
+                    }, onError: { (error) in
+                        observer.onError(error)
+                    }).disposed(by: self.bag)
             }
             return Disposables.create()
         }

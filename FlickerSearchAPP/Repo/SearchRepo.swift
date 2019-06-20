@@ -10,17 +10,29 @@ import Foundation
 import RxSwift
 import Moya
 import ObjectMapper
-class SearchRepo :BaseRepo<PhotoSearchItem>{
+class SearchRepo :BaseRepo<SearchItem>{
     static let disposeBag = DisposeBag()
-    
+    // Mark : search Image
     static func getImagesByQuery(query:String,completion:@escaping ApiHandler) {
         moyaProvider
             .rx
             .request(.getImages(query: query, page: 1))
             .mapJSON()
             .subscribe(onSuccess: { (json) in
+                print(json)
                 self.handleResult(json, completion: completion)
             }) { (error) in completion(false,nil)}
             .disposed(by: disposeBag)
+    }
+    // Mark : search Groups
+    static func getGroupsByQuery(query :String,completion:@escaping ApiHandler) {
+        moyaProvider
+        .rx
+        .request(.getGroups(query: query))
+        .mapJSON()
+            .subscribe(onSuccess: { (json) in
+                print(json)
+            }){ (error) in completion(false,nil)}
+        .disposed(by: disposeBag)
     }
 }

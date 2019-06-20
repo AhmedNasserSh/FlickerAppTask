@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (4.8.2)
   - IQKeyboardManagerSwift (6.3.0)
+  - KVNProgress (2.3.5)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
   - Moya-ObjectMapper/Core (2.8):
@@ -24,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - KVNProgress
   - Moya-ObjectMapper/RxSwift
   - Moya/RxSwift (~> 12.0)
   - ObjectMapper (= 3.4.2)
@@ -34,6 +36,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - IQKeyboardManagerSwift
+    - KVNProgress
     - Moya
     - Moya-ObjectMapper
     - ObjectMapper
@@ -44,6 +47,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  KVNProgress: d7046cce142f1aeb740db39dc3cacfe910fac354
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
@@ -51,6 +55,6 @@ SPEC CHECKSUMS:
   RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: 23b00112a7f40f418ca894fe36b3e639b59bf88c
+PODFILE CHECKSUM: 1b4d33c346f0a587ff74facc52dae4634dc521c1
 
 COCOAPODS: 1.5.3

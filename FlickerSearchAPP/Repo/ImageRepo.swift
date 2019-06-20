@@ -22,10 +22,6 @@ class ImageRepo {
                 print(image)
             }, onError: { (error) in
                 print("e")
-            }, onCompleted: {
-                print("c")
-            }, onDisposed: {
-                print("d")
             }).disposed(by: bag)
     }
 }

@@ -8,39 +8,18 @@
 
 import Foundation
 import ObjectMapper
-enum PhotoState {
-    case new, downloaded, failed
-}
-class PhotoSearchItem :BaseModel  {
-    var photos : PhotoResponse?
-    override func mapping(map: Map) {
-        super.mapping(map: map)
-        photos <- map["photos"]
-    }
-}
-class PhotoResponse :Mappable {
-    var page : Int?
-    var pages : Int?
-    var perpage : Int?
-    var photo : [Photo]?
-    required init?(map: Map) { }
-    func mapping(map: Map) {
-        page <- map["page"]
-        pages <- map["pages"]
-        perpage <- map["perpage"]
-        photo <- map["photo"]
-    }
-}
 class Photo : Mappable {
     var farm : Int?
     var id : String?
     var server : String?
     var secret : String?
     var image :UIImage?
-    var state :PhotoState?
+    
     init() {
     }
+    
     required init?(map: Map) { }
+    
     func mapping(map: Map) {
         farm <- map["farm"]
         id <- map["id"]
@@ -49,7 +28,6 @@ class Photo : Mappable {
     }
 
     func getImageURL(_ size:String = "m") -> URL? {
-        return  URL(string:"https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
         guard let f = farm , let s = server ,let i = id ,let c = secret else{ return nil}
         if let url =  URL(string: "https://farm\(f).staticflickr.com/\(s)/\(i)_\(c)_\(size).jpg") {
             return url

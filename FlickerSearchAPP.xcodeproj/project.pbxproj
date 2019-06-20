@@ -10,6 +10,14 @@
 		7E43E70E7C56494C09DA48B9 /* Pods_FlickerSearchAPPTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DEE16BB0FBEAC7912B00C23 /* Pods_FlickerSearchAPPTests.framework */; };
 		AD3D61A8D3709EC46C4DC68D /* Pods_FlickerSearchAPP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAA3891778DF7FB9E26BA51 /* Pods_FlickerSearchAPP.framework */; };
 		BE14FA7422B8DC6B00C76B18 /* ImageDownloadManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE14FA7322B8DC6B00C76B18 /* ImageDownloadManger.swift */; };
+		BE18A70922BB5BAA002C6E1A /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A70822BB5BAA002C6E1A /* BasePresenter.swift */; };
+		BE18A70B22BB5BCB002C6E1A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A70A22BB5BCB002C6E1A /* BaseView.swift */; };
+		BE18A70E22BB5C55002C6E1A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A70D22BB5C55002C6E1A /* SearchPresenter.swift */; };
+		BE18A71022BB5F1D002C6E1A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A70F22BB5F1D002C6E1A /* SearchViewController.swift */; };
+		BE18A71322BB5F7B002C6E1A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A71222BB5F7B002C6E1A /* BaseViewController.swift */; };
+		BE18A71522BB7277002C6E1A /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A71422BB7277002C6E1A /* MainPresenter.swift */; };
+		BE18A71722BB88E1002C6E1A /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A71622BB88E1002C6E1A /* Group.swift */; };
+		BE18A71922BB8ADB002C6E1A /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A71822BB8ADB002C6E1A /* SearchItem.swift */; };
 		BE1CB48622B7994B008C60D1 /* FlickerAPIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48522B7994B008C60D1 /* FlickerAPIManger.swift */; };
 		BE1CB48922B79D71008C60D1 /* SearchRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48822B79D71008C60D1 /* SearchRepo.swift */; };
 		BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48B22B7AE3E008C60D1 /* Constant.swift */; };
@@ -21,9 +29,7 @@
 		BE3C010F22B9EED70046B69F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3C010E22B9EED70046B69F /* PhotoCollectionViewCell.swift */; };
 		BE3C011122BAA83B0046B69F /* ImageRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3C011022BAA83B0046B69F /* ImageRepo.swift */; };
 		BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224CF22B6977F006A3C32 /* AppDelegate.swift */; };
-		BEA224D222B6977F006A3C32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224D122B6977F006A3C32 /* ViewController.swift */; };
 		BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D322B6977F006A3C32 /* Main.storyboard */; };
-		BEA224D822B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BEA224D622B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld */; };
 		BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D922B69781006A3C32 /* Assets.xcassets */; };
 		BEA224DD22B69781006A3C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224DB22B69781006A3C32 /* LaunchScreen.storyboard */; };
 		BEA224E822B69781006A3C32 /* FlickerSearchAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224E722B69781006A3C32 /* FlickerSearchAPPTests.swift */; };
@@ -46,6 +52,14 @@
 		9DEE16BB0FBEAC7912B00C23 /* Pods_FlickerSearchAPPTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickerSearchAPPTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E4CC6B68A73DA6E282886F /* Pods-FlickerSearchAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlickerSearchAPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlickerSearchAPP/Pods-FlickerSearchAPP.release.xcconfig"; sourceTree = "<group>"; };
 		BE14FA7322B8DC6B00C76B18 /* ImageDownloadManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadManger.swift; sourceTree = "<group>"; };
+		BE18A70822BB5BAA002C6E1A /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		BE18A70A22BB5BCB002C6E1A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		BE18A70D22BB5C55002C6E1A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		BE18A70F22BB5F1D002C6E1A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		BE18A71222BB5F7B002C6E1A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		BE18A71422BB7277002C6E1A /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		BE18A71622BB88E1002C6E1A /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		BE18A71822BB8ADB002C6E1A /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		BE1CB48522B7994B008C60D1 /* FlickerAPIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerAPIManger.swift; sourceTree = "<group>"; };
 		BE1CB48822B79D71008C60D1 /* SearchRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepo.swift; sourceTree = "<group>"; };
 		BE1CB48B22B7AE3E008C60D1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
@@ -58,9 +72,7 @@
 		BE3C011022BAA83B0046B69F /* ImageRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepo.swift; sourceTree = "<group>"; };
 		BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerSearchAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA224CF22B6977F006A3C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BEA224D122B6977F006A3C32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BEA224D422B6977F006A3C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BEA224D722B6977F006A3C32 /* FlickerSearchAPP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlickerSearchAPP.xcdatamodel; sourceTree = "<group>"; };
 		BEA224D922B69781006A3C32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA224DC22B69781006A3C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA224DE22B69781006A3C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,6 +130,26 @@
 			path = ImageDownloadManger;
 			sourceTree = "<group>";
 		};
+		BE18A70722BB579A002C6E1A /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				BE18A70822BB5BAA002C6E1A /* BasePresenter.swift */,
+				BE18A70A22BB5BCB002C6E1A /* BaseView.swift */,
+				BE18A71222BB5F7B002C6E1A /* BaseViewController.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
+		BE18A70C22BB5C1A002C6E1A /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				BE3C010D22B9EEAE0046B69F /* cells */,
+				BE18A70D22BB5C55002C6E1A /* SearchPresenter.swift */,
+				BE18A70F22BB5F1D002C6E1A /* SearchViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		BE1CB48022B796D1008C60D1 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,7 +183,9 @@
 			children = (
 				BE1D42E122B81DA9001601F1 /* BaseModel.swift */,
 				BE1D42D322B7FB4F001601F1 /* ErrorModel.swift */,
+				BE18A71822BB8ADB002C6E1A /* SearchItem.swift */,
 				BE1D42DA22B81441001601F1 /* Photo.swift */,
+				BE18A71622BB88E1002C6E1A /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -159,7 +193,9 @@
 		BE3C010C22B9EEA40046B69F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BE3C010D22B9EEAE0046B69F /* cells */,
+				BE18A70722BB579A002C6E1A /* Bases */,
+				BE18A70C22BB5C1A002C6E1A /* Search */,
+				BE18A71422BB7277002C6E1A /* MainPresenter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,12 +237,10 @@
 				BE1CB48722B79D59008C60D1 /* Repo */,
 				BE3C010C22B9EEA40046B69F /* View */,
 				BEA224CF22B6977F006A3C32 /* AppDelegate.swift */,
-				BEA224D122B6977F006A3C32 /* ViewController.swift */,
 				BEA224D322B6977F006A3C32 /* Main.storyboard */,
 				BEA224D922B69781006A3C32 /* Assets.xcassets */,
 				BEA224DB22B69781006A3C32 /* LaunchScreen.storyboard */,
 				BEA224DE22B69781006A3C32 /* Info.plist */,
-				BEA224D622B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld */,
 			);
 			path = FlickerSearchAPP;
 			sourceTree = "<group>";
@@ -365,6 +399,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FlickerSearchAPP/Pods-FlickerSearchAPP-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/KVNProgress/KVNProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -376,6 +411,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVNProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -396,19 +432,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1D42DD22B81B66001601F1 /* BaseRepo.swift in Sources */,
+				BE18A70922BB5BAA002C6E1A /* BasePresenter.swift in Sources */,
 				BE1D42D422B7FB4F001601F1 /* ErrorModel.swift in Sources */,
 				BE3C011122BAA83B0046B69F /* ImageRepo.swift in Sources */,
+				BE18A71922BB8ADB002C6E1A /* SearchItem.swift in Sources */,
+				BE18A71322BB5F7B002C6E1A /* BaseViewController.swift in Sources */,
 				BE1D42E222B81DA9001601F1 /* BaseModel.swift in Sources */,
+				BE18A71722BB88E1002C6E1A /* Group.swift in Sources */,
 				BE1CB48622B7994B008C60D1 /* FlickerAPIManger.swift in Sources */,
-				BEA224D222B6977F006A3C32 /* ViewController.swift in Sources */,
 				BE1D42DB22B81441001601F1 /* Photo.swift in Sources */,
 				BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */,
 				BE14FA7422B8DC6B00C76B18 /* ImageDownloadManger.swift in Sources */,
-				BEA224D822B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld in Sources */,
 				BE3C010F22B9EED70046B69F /* PhotoCollectionViewCell.swift in Sources */,
+				BE18A71022BB5F1D002C6E1A /* SearchViewController.swift in Sources */,
 				BE1D42D922B812A8001601F1 /* FlickerRequestWrapper.swift in Sources */,
+				BE18A71522BB7277002C6E1A /* MainPresenter.swift in Sources */,
 				BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */,
+				BE18A70E22BB5C55002C6E1A /* SearchPresenter.swift in Sources */,
 				BE1CB48922B79D71008C60D1 /* SearchRepo.swift in Sources */,
+				BE18A70B22BB5BCB002C6E1A /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,19 +721,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		BEA224D622B6977F006A3C32 /* FlickerSearchAPP.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				BEA224D722B6977F006A3C32 /* FlickerSearchAPP.xcdatamodel */,
-			);
-			currentVersion = BEA224D722B6977F006A3C32 /* FlickerSearchAPP.xcdatamodel */;
-			path = FlickerSearchAPP.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = BEA224C422B6977F006A3C32 /* Project object */;
 }
