@@ -232,8 +232,8 @@
 			isa = PBXGroup;
 			children = (
 				BE1CB48A22B7AE32008C60D1 /* Constants */,
-				BE1CB48022B796D1008C60D1 /* Network */,
 				BE1D42D222B7FB38001601F1 /* Model */,
+				BE1CB48022B796D1008C60D1 /* Network */,
 				BE1CB48722B79D59008C60D1 /* Repo */,
 				BE3C010C22B9EEA40046B69F /* View */,
 				BEA224CF22B6977F006A3C32 /* AppDelegate.swift */,

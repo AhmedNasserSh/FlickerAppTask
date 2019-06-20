@@ -15,9 +15,9 @@ protocol SearchView:BaseView {
 class SearchPresenter:BasePresenter<SearchView> {
     let imageRepo =  ImageRepo()
     // Mark : Search Iamges
-    func searchPhoto(query:String) {
+    func searchPhoto(query:String,page:Int) {
         self.view?.startLoading()
-        SearchRepo.getImagesByQuery(query: query) { (success, model) in
+        SearchRepo.getImagesByQuery(query: query, page: page) { (success, model) in
             self.view?.finishLoading()
             if success {
                 guard let searchItem = (model as? SearchItem) ,let response = searchItem.response , let images = response.photos else{
@@ -36,7 +36,7 @@ class SearchPresenter:BasePresenter<SearchView> {
         SearchRepo.getGroupsByQuery(query: query) { (success, model) in
             self.view?.finishLoading()
             if success {
-                guard let searchItem = (model as? SearchItem) ,let response = searchItem.response , let images = response.groups else{
+                guard let searchItem = (model as? SearchItem) ,let response = searchItem.response , let groups = response.groups else{
                     self.view?.error(error: nil)
                     return
                 }
