@@ -28,6 +28,9 @@
 		BE1D42E222B81DA9001601F1 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42E122B81DA9001601F1 /* BaseModel.swift */; };
 		BE3C010F22B9EED70046B69F /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3C010E22B9EED70046B69F /* PhotoCollectionViewCell.swift */; };
 		BE3C011122BAA83B0046B69F /* ImageRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3C011022BAA83B0046B69F /* ImageRepo.swift */; };
+		BE58DD9922BD55B400ECDFF2 /* SearchFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DD9822BD55B400ECDFF2 /* SearchFooterView.swift */; };
+		BE58DD9B22BD55C300ECDFF2 /* SearchFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE58DD9A22BD55C300ECDFF2 /* SearchFooterView.xib */; };
+		BE58DD9D22BD716D00ECDFF2 /* CellSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DD9C22BD716D00ECDFF2 /* CellSectionModel.swift */; };
 		BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224CF22B6977F006A3C32 /* AppDelegate.swift */; };
 		BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D322B6977F006A3C32 /* Main.storyboard */; };
 		BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D922B69781006A3C32 /* Assets.xcassets */; };
@@ -70,6 +73,9 @@
 		BE1D42E122B81DA9001601F1 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		BE3C010E22B9EED70046B69F /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE3C011022BAA83B0046B69F /* ImageRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepo.swift; sourceTree = "<group>"; };
+		BE58DD9822BD55B400ECDFF2 /* SearchFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooterView.swift; sourceTree = "<group>"; };
+		BE58DD9A22BD55C300ECDFF2 /* SearchFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFooterView.xib; sourceTree = "<group>"; };
+		BE58DD9C22BD716D00ECDFF2 /* CellSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSectionModel.swift; sourceTree = "<group>"; };
 		BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerSearchAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA224CF22B6977F006A3C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA224D422B6977F006A3C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				BE18A71822BB8ADB002C6E1A /* SearchItem.swift */,
 				BE1D42DA22B81441001601F1 /* Photo.swift */,
 				BE18A71622BB88E1002C6E1A /* Group.swift */,
+				BE58DD9C22BD716D00ECDFF2 /* CellSectionModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				BE18A70722BB579A002C6E1A /* Bases */,
+				BE58DD9522BD555C00ECDFF2 /* Custom */,
 				BE18A70C22BB5C1A002C6E1A /* Search */,
 				BE18A71422BB7277002C6E1A /* MainPresenter.swift */,
 			);
@@ -206,6 +214,15 @@
 				BE3C010E22B9EED70046B69F /* PhotoCollectionViewCell.swift */,
 			);
 			path = cells;
+			sourceTree = "<group>";
+		};
+		BE58DD9522BD555C00ECDFF2 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				BE58DD9822BD55B400ECDFF2 /* SearchFooterView.swift */,
+				BE58DD9A22BD55C300ECDFF2 /* SearchFooterView.xib */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		BEA224C322B6977F006A3C32 = {
@@ -339,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA224DD22B69781006A3C32 /* LaunchScreen.storyboard in Resources */,
+				BE58DD9B22BD55C300ECDFF2 /* SearchFooterView.xib in Resources */,
 				BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */,
 				BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */,
 			);
@@ -398,6 +416,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FlickerSearchAPP/Pods-FlickerSearchAPP-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KVNProgress/KVNProgress.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
@@ -405,11 +424,13 @@
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVNProgress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
@@ -417,6 +438,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +458,7 @@
 				BE1D42D422B7FB4F001601F1 /* ErrorModel.swift in Sources */,
 				BE3C011122BAA83B0046B69F /* ImageRepo.swift in Sources */,
 				BE18A71922BB8ADB002C6E1A /* SearchItem.swift in Sources */,
+				BE58DD9D22BD716D00ECDFF2 /* CellSectionModel.swift in Sources */,
 				BE18A71322BB5F7B002C6E1A /* BaseViewController.swift in Sources */,
 				BE1D42E222B81DA9001601F1 /* BaseModel.swift in Sources */,
 				BE18A71722BB88E1002C6E1A /* Group.swift in Sources */,
@@ -444,6 +467,7 @@
 				BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */,
 				BE14FA7422B8DC6B00C76B18 /* ImageDownloadManger.swift in Sources */,
 				BE3C010F22B9EED70046B69F /* PhotoCollectionViewCell.swift in Sources */,
+				BE58DD9922BD55B400ECDFF2 /* SearchFooterView.swift in Sources */,
 				BE18A71022BB5F1D002C6E1A /* SearchViewController.swift in Sources */,
 				BE1D42D922B812A8001601F1 /* FlickerRequestWrapper.swift in Sources */,
 				BE18A71522BB7277002C6E1A /* MainPresenter.swift in Sources */,

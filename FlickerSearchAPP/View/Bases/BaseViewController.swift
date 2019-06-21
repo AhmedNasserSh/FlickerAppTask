@@ -9,13 +9,16 @@
 import UIKit
 import KVNProgress
 class BaseViewController: UIViewController {
+    var useProgress = true
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 }
 extension BaseViewController :BaseView {
     func startLoading() {
-        KVNProgress.show()
+        if useProgress {
+            KVNProgress.show()
+        }
     }
     
     func finishLoading() {

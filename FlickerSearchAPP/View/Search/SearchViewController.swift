@@ -9,87 +9,117 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
+
 class SearchViewController: BaseViewController {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    var footerView :SearchFooterView?
+    let photos:BehaviorRelay<[CellSectionModel]> = BehaviorRelay(value: [])
+    let presenter = SearchPresenter()
+    let disposeBag = DisposeBag()
     var page = 1
     var query = ""
-    let presenter = SearchPresenter()
-    let photos:BehaviorRelay<[Photo]> = BehaviorRelay(value: [])
-    let disposeBag = DisposeBag()
+
 }
 // Mark : Controller Life Cycle
 extension SearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter.attachView(view: self)
-        setUpCollectionView()
+        registerFooterCell()
+        configureCollectionViewDataSource()
+        configureCollectionViewDelegate()
         configureSearchBar()
+        searchBarDidBeginEditing()
+        searchBarCancelButton()
     }
 }
-// Mark : Views Functions
+// Mark : collectionView
 extension SearchViewController {
-    func setUpCollectionView() {
-        photos.asObservable()
-            .bind(to: self
-                .imageCollectionView
-                .rx
-                .items(cellIdentifier: "PhotoCollectionViewCell", cellType: PhotoCollectionViewCell.self))  { row, data, cell in
-            }.disposed(by: disposeBag)
-        imageCollectionView
-            .rx
-            .setDelegate(self)
-            .disposed(by: disposeBag)
+    func registerFooterCell() {
+        let nib = UINib(nibName: "SearchFooterView", bundle: nil)
+        imageCollectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "SearchFooterView")
     }
-    func configureSearchBar() {
-        searchBar
-        .rx
-        .searchButtonClicked
-        .subscribe(onNext: { [unowned self]() in
-            if let text = self.searchBar.text , text.count  > 0 {
-                self.query = text
-                self.presenter.searchPhoto(query:text, page: self.page)
-            }
-        }).disposed(by: disposeBag)
-
-        searchBar
-            .rx
-            .textDidBeginEditing
-            .subscribe(onNext: { [unowned self] in
-                self.page = 0
-                self.searchBar.setShowsCancelButton(true, animated: true)
+    
+    func configureCollectionViewDataSource() {
+        let dataSource = RxCollectionViewSectionedReloadDataSource<CellSectionModel>(configureCell: { dataSource, collectionView, indexPath, item in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
+            cell.imageView.image = nil
+            return cell
+        })
+        dataSource.configureSupplementaryView = {(dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
+            self.footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "SearchFooterView", for: indexPath) as? SearchFooterView
+            return self.footerView!
+        }
+        photos.bind(to: imageCollectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
+    }
+    
+    func configureCollectionViewDelegate() {
+        imageCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
+        imageCollectionView.rx.willDisplaySupplementaryView
+            .subscribe({ [unowned self] _  in
+                self.footerView?.show(true)
             }).disposed(by: disposeBag)
-        
-        searchBar
-        .rx
-        .cancelButtonClicked
-        .subscribe(onNext: { [unowned self] in
-            self.searchBar.text = ""
-            self.searchBar.setShowsCancelButton(false, animated: true)
-            self.searchBar.endEditing(true)
-        }).disposed(by: disposeBag)
+        imageCollectionView.rx.didEndDisplayingSupplementaryView
+            .subscribe({ [unowned self] _  in
+                self.footerView?.show(false)
+            }).disposed(by: disposeBag)
     }
-    
-    
 }
 // Mark :Collection View Delegate
 extension SearchViewController :UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         // Lazy Loading images
-        self.presenter.loadImageFrom(photo: photos.value[indexPath.row], indexPath: indexPath)
-        
+        self.presenter.loadImageFrom(photo: photos.value[0].items[indexPath.row], indexPath: indexPath)
         // Load more Images
-        if indexPath.row == photos.value.count - 2 {
+        loadMore(indexPath: indexPath)
+    }
+    func loadMore(indexPath: IndexPath) {
+        if indexPath.row == photos.value[0].items.count - 4 {
             page += 1
+            useProgress = false
             self.presenter.searchPhoto(query: query, page: page )
         }
+    }
+}
+// Mark: Configure Search bar
+extension SearchViewController {
+    func configureSearchBar() {
+        searchBar.rx.searchButtonClicked
+            .subscribe(onNext: { [unowned self]() in
+                if let text = self.searchBar.text , text.count  > 0 {
+                    self.query = text
+                    self.useProgress = true
+                    self.presenter.searchPhoto(query:text, page: self.page)
+                }
+            }).disposed(by: disposeBag)
+    }
+    
+    func searchBarDidBeginEditing(){
+        searchBar.rx.textDidBeginEditing
+            .subscribe(onNext: { [unowned self] in
+                self.page = 0
+                self.searchBar.setShowsCancelButton(true, animated: true)
+            }).disposed(by: disposeBag)
+    }
+    
+    func searchBarCancelButton(){
+        searchBar.rx.cancelButtonClicked
+            .subscribe(onNext: { [unowned self] in
+                self.searchBar.text = ""
+                self.searchBar.setShowsCancelButton(false, animated: true)
+                self.searchBar.endEditing(true)
+            }).disposed(by: disposeBag)
     }
 }
 // Mark : SearchView Delegate
 extension SearchViewController :SearchView {
     func setPhotos(photos: [Photo]) {
-        self.photos.accept(self.photos.value + photos)
+        let current = self.photos.value.count > 0 ?  self.photos.value[0].items :[]
+        self.photos.accept([CellSectionModel(header:"", items: current + photos)])
     }
+    
     func setImage(image: UIImage, indexPath: IndexPath) {
         if let cell = imageCollectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell{
             cell.configure(image: image)

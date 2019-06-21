@@ -8,6 +8,7 @@ target 'FlickerSearchAPP' do
   # Pods for FlickerSearchAPP
   pod 'RxSwift', '4.5'
   pod 'RxCocoa', '4.5'
+  pod 'RxDataSources', '~> 3.1.0'
   pod 'Moya/RxSwift', '~> 12.0'
   pod 'ObjectMapper', '3.4.2'
   pod 'IQKeyboardManagerSwift'

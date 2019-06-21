@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SearchFooterView" id="PSv-th-Sip" customClass="SearchFooterView" customModule="FlickerSearchAPP" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXj-0g-Q3s">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <viewLayoutGuide key="safeArea" id="lVN-hu-RZ0"/>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="LXj-0g-Q3s" firstAttribute="top" secondItem="PSv-th-Sip" secondAttribute="top" id="B5m-sq-yFK"/>
+                <constraint firstAttribute="bottom" secondItem="LXj-0g-Q3s" secondAttribute="bottom" id="exE-pL-Fbx"/>
+                <constraint firstAttribute="trailing" secondItem="LXj-0g-Q3s" secondAttribute="trailing" id="sQr-4a-0nt"/>
+                <constraint firstItem="LXj-0g-Q3s" firstAttribute="leading" secondItem="PSv-th-Sip" secondAttribute="leading" id="sZD-wp-scF"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="He3-Vf-aR1"/>
+            <point key="canvasLocation" x="-855" y="-650"/>
+        </collectionReusableView>
+    </objects>
+</document>
