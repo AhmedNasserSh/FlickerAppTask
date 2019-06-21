@@ -89,9 +89,7 @@ extension SearchViewController {
         searchBar.rx.searchButtonClicked
             .subscribe(onNext: { [unowned self]() in
                 if let text = self.searchBar.text , text.count  > 0 {
-                    self.query = text
-                    self.useProgress = true
-                    self.presenter.searchPhoto(query:text, page: self.page)
+                  self.reset(searchQuery: text)
                 }
             }).disposed(by: disposeBag)
     }
@@ -115,9 +113,16 @@ extension SearchViewController {
 }
 // Mark : SearchView Delegate
 extension SearchViewController :SearchView {
+    func reset(searchQuery:String){
+        self.photos.accept([])
+        self.query = searchQuery
+        self.useProgress = true
+        self.presenter.searchPhoto(query:searchQuery, page: self.page)
+    }
+    
     func setPhotos(photos: [Photo]) {
-        let current = self.photos.value.count > 0 ?  self.photos.value[0].items :[]
-        self.photos.accept([CellSectionModel(header:"", items: current + photos)])
+        let currentPhotos = self.photos.value.count > 0 ?  self.photos.value[0].items : []
+        self.photos.accept([CellSectionModel(header:"", items: currentPhotos + photos)])
     }
     
     func setImage(image: UIImage, indexPath: IndexPath) {
