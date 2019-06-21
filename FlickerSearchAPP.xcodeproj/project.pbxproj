@@ -31,6 +31,7 @@
 		BE58DD9922BD55B400ECDFF2 /* SearchFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DD9822BD55B400ECDFF2 /* SearchFooterView.swift */; };
 		BE58DD9B22BD55C300ECDFF2 /* SearchFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE58DD9A22BD55C300ECDFF2 /* SearchFooterView.xib */; };
 		BE58DD9D22BD716D00ECDFF2 /* CellSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DD9C22BD716D00ECDFF2 /* CellSectionModel.swift */; };
+		BE58DDA122BD8C0A00ECDFF2 /* DotsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDA022BD8C0A00ECDFF2 /* DotsAnimation.swift */; };
 		BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224CF22B6977F006A3C32 /* AppDelegate.swift */; };
 		BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D322B6977F006A3C32 /* Main.storyboard */; };
 		BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D922B69781006A3C32 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		BE58DD9822BD55B400ECDFF2 /* SearchFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooterView.swift; sourceTree = "<group>"; };
 		BE58DD9A22BD55C300ECDFF2 /* SearchFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFooterView.xib; sourceTree = "<group>"; };
 		BE58DD9C22BD716D00ECDFF2 /* CellSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSectionModel.swift; sourceTree = "<group>"; };
+		BE58DDA022BD8C0A00ECDFF2 /* DotsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsAnimation.swift; sourceTree = "<group>"; };
 		BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerSearchAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA224CF22B6977F006A3C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA224D422B6977F006A3C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -219,10 +221,27 @@
 		BE58DD9522BD555C00ECDFF2 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				BE58DD9F22BD8BF700ECDFF2 /* DotsAnimation */,
+				BE58DD9E22BD8BE500ECDFF2 /* SearchFooter */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		BE58DD9E22BD8BE500ECDFF2 /* SearchFooter */ = {
+			isa = PBXGroup;
+			children = (
 				BE58DD9822BD55B400ECDFF2 /* SearchFooterView.swift */,
 				BE58DD9A22BD55C300ECDFF2 /* SearchFooterView.xib */,
 			);
-			path = Custom;
+			path = SearchFooter;
+			sourceTree = "<group>";
+		};
+		BE58DD9F22BD8BF700ECDFF2 /* DotsAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				BE58DDA022BD8C0A00ECDFF2 /* DotsAnimation.swift */,
+			);
+			path = DotsAnimation;
 			sourceTree = "<group>";
 		};
 		BEA224C322B6977F006A3C32 = {
@@ -466,6 +485,7 @@
 				BE1D42DB22B81441001601F1 /* Photo.swift in Sources */,
 				BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */,
 				BE14FA7422B8DC6B00C76B18 /* ImageDownloadManger.swift in Sources */,
+				BE58DDA122BD8C0A00ECDFF2 /* DotsAnimation.swift in Sources */,
 				BE3C010F22B9EED70046B69F /* PhotoCollectionViewCell.swift in Sources */,
 				BE58DD9922BD55B400ECDFF2 /* SearchFooterView.swift in Sources */,
 				BE18A71022BB5F1D002C6E1A /* SearchViewController.swift in Sources */,

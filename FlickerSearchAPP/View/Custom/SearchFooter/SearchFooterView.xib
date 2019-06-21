@@ -17,18 +17,23 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXj-0g-Q3s">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
-                    <color key="backgroundColor" red="0.94509803920000002" green="0.35294117650000001" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="162.5" y="0.0" width="50" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="NSB-xD-nL5"/>
+                        <constraint firstAttribute="height" constant="50" id="uYr-Q4-RVJ"/>
+                    </constraints>
                     <viewLayoutGuide key="safeArea" id="lVN-hu-RZ0"/>
                 </view>
             </subviews>
             <constraints>
-                <constraint firstItem="LXj-0g-Q3s" firstAttribute="top" secondItem="PSv-th-Sip" secondAttribute="top" id="B5m-sq-yFK"/>
-                <constraint firstAttribute="bottom" secondItem="LXj-0g-Q3s" secondAttribute="bottom" id="exE-pL-Fbx"/>
-                <constraint firstAttribute="trailing" secondItem="LXj-0g-Q3s" secondAttribute="trailing" id="sQr-4a-0nt"/>
-                <constraint firstItem="LXj-0g-Q3s" firstAttribute="leading" secondItem="PSv-th-Sip" secondAttribute="leading" id="sZD-wp-scF"/>
+                <constraint firstItem="LXj-0g-Q3s" firstAttribute="centerX" secondItem="PSv-th-Sip" secondAttribute="centerX" id="7p2-z0-nOr"/>
+                <constraint firstItem="LXj-0g-Q3s" firstAttribute="centerY" secondItem="PSv-th-Sip" secondAttribute="centerY" id="Uyu-pC-LHW"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="He3-Vf-aR1"/>
+            <connections>
+                <outlet property="progressView" destination="LXj-0g-Q3s" id="3Ac-TH-pCK"/>
+            </connections>
             <point key="canvasLocation" x="-855" y="-650"/>
         </collectionReusableView>
     </objects>

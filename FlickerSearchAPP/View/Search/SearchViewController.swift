@@ -45,7 +45,7 @@ extension SearchViewController {
     func configureCollectionViewDataSource() {
         let dataSource = RxCollectionViewSectionedReloadDataSource<CellSectionModel>(configureCell: { dataSource, collectionView, indexPath, item in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-            cell.imageView.image = nil
+            cell.reset()
             return cell
         })
         dataSource.configureSupplementaryView = {(dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
@@ -59,11 +59,11 @@ extension SearchViewController {
         imageCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
         imageCollectionView.rx.willDisplaySupplementaryView
             .subscribe({ [unowned self] _  in
-                self.footerView?.show(true)
+                self.footerView?.configure()
             }).disposed(by: disposeBag)
         imageCollectionView.rx.didEndDisplayingSupplementaryView
             .subscribe({ [unowned self] _  in
-                self.footerView?.show(false)
+                self.footerView?.dismiss()
             }).disposed(by: disposeBag)
     }
 }

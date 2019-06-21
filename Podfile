@@ -14,7 +14,6 @@ target 'FlickerSearchAPP' do
   pod 'IQKeyboardManagerSwift'
   pod 'Moya-ObjectMapper/RxSwift'
   pod 'KVNProgress'
-
   target 'FlickerSearchAPPTests' do
     inherit! :search_paths
     # Pods for testing
