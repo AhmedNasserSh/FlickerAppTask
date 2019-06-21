@@ -20,7 +20,6 @@ class SearchViewController: BaseViewController {
     let disposeBag = DisposeBag()
     var page = 1
     var query = ""
-
 }
 // Mark : Controller Life Cycle
 extension SearchViewController {
@@ -75,6 +74,7 @@ extension SearchViewController :UICollectionViewDelegate {
         // Load more Images
         loadMore(indexPath: indexPath)
     }
+    
     func loadMore(indexPath: IndexPath) {
         if indexPath.row == photos.value[0].items.count - 4 {
             page += 1
