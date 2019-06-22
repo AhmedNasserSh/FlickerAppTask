@@ -12,7 +12,7 @@ import ObjectMapper
 let moyaProvider = MoyaProvider<FlickerAPIManger>()
 enum FlickerAPIManger {
     case getImages(query:String,page:Int)
-    case getGroups(query: String)
+    case getGroups(query: String,page:Int)
     case downloadImage(url:URL)
 }
 extension FlickerAPIManger: TargetType {

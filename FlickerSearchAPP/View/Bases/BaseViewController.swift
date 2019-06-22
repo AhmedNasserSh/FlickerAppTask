@@ -9,7 +9,7 @@
 import UIKit
 import KVNProgress
 class BaseViewController: UIViewController {
-    var useProgress = true
+    var useProgress = false
     override func viewDidLoad() {
         super.viewDidLoad()
     }

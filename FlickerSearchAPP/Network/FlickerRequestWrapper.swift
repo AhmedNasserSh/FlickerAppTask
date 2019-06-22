@@ -12,8 +12,8 @@ class FlickerRequestWrapper {
         switch service {
         case .getImages(let query,let page):
             return  ["method": SearchMethod.images.rawValue , "api_key": APIConstant.flickerApiKey, "tags":query, "format":"json", "nojsoncallback": 1 ,"in_gallery" :1 ,"per_page" :20,"page":page ]
-        case .getGroups(let query):
-            return  ["method": SearchMethod.groups.rawValue, "api_key": APIConstant.flickerApiKey, "tags":query, "format":"json", "nojsoncallback": 1 ,"per_page" :20,"page":1]
+        case .getGroups(let query,let page):
+            return  ["method": SearchMethod.groups.rawValue, "api_key": APIConstant.flickerApiKey, "text":query, "format":"json", "nojsoncallback": 1 ,"per_page" :20,"page":page]
         default:
             // download image
             return nil

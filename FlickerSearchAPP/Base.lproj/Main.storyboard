@@ -27,8 +27,16 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R4s-6e-AQH">
+                                <rect key="frame" x="8" y="76" width="359" height="29"/>
+                                <segments>
+                                    <segment title="Images"/>
+                                    <segment title="Groups"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g35-42-1RQ">
-                                <rect key="frame" x="0.0" y="84" width="375" height="575"/>
+                                <rect key="frame" x="0.0" y="104" width="375" height="555"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="ka4-fd-iqq" customClass="ImageLayout" customModule="FlickerSearchAPP" customModuleProvider="target"/>
                                 <cells>
@@ -60,20 +68,24 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iLL-16-tXj" secondAttribute="trailing" id="2UG-4b-OZW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="R4s-6e-AQH" secondAttribute="trailing" constant="8" id="4tX-w1-3PJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g35-42-1RQ" secondAttribute="trailing" id="CSD-HE-f7B"/>
                             <constraint firstItem="BSS-Ru-7U5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HwS-Mc-qoD"/>
                             <constraint firstItem="iLL-16-tXj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lb3-hB-XsG"/>
                             <constraint firstItem="g35-42-1RQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tm0-At-9hv"/>
+                            <constraint firstItem="R4s-6e-AQH" firstAttribute="top" secondItem="BSS-Ru-7U5" secondAttribute="bottom" id="URT-z5-Eb0"/>
                             <constraint firstItem="BSS-Ru-7U5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W5y-I0-cNH"/>
-                            <constraint firstItem="g35-42-1RQ" firstAttribute="top" secondItem="BSS-Ru-7U5" secondAttribute="bottom" constant="8" id="Yzg-rb-at3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iLL-16-tXj" secondAttribute="bottom" id="ex0-W9-FqQ"/>
                             <constraint firstItem="iLL-16-tXj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gRa-td-M1f"/>
                             <constraint firstItem="BSS-Ru-7U5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hNI-cr-9ZO"/>
+                            <constraint firstItem="g35-42-1RQ" firstAttribute="top" secondItem="R4s-6e-AQH" secondAttribute="bottom" id="hZb-PK-lJb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g35-42-1RQ" secondAttribute="bottom" constant="8" id="kHp-Jl-NKA"/>
+                            <constraint firstItem="R4s-6e-AQH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="s3q-DE-fkc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="filterSegmentedControl" destination="R4s-6e-AQH" id="VeH-EE-qS4"/>
                         <outlet property="imageCollectionView" destination="g35-42-1RQ" id="y1K-hR-Zcz"/>
                         <outlet property="searchBar" destination="BSS-Ru-7U5" id="faQ-gV-Wa1"/>
                         <outlet property="searchDisplayController" destination="iaU-u7-6F5" id="Yae-ie-mGL"/>
@@ -89,6 +101,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="62.518740629685162"/>
         </scene>
     </scenes>
     <resources>

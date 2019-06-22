@@ -8,47 +8,69 @@
 
 import Foundation
 import UIKit
+import ObjectMapper
+enum SearchViewType {
+    case group
+    case image
+}
 protocol SearchView:BaseView {
-    func setPhotos(photos:[Photo])
+    func setItem(searchItem:[Mappable])
     func setImage(image:UIImage,indexPath:IndexPath)
 }
 class SearchPresenter:BasePresenter<SearchView> {
     let imageRepo =  ImageRepo()
+    var currentType :SearchViewType = .image
+    func performQuery(query:String,page:Int,type:SearchViewType) {
+        currentType = type
+        if type == .image {
+            searchPhoto(query: query, page: page)
+        }else{
+            searchGroup(query: query, page: page)
+        }
+    }
     // Mark : Search Iamges
     func searchPhoto(query:String,page:Int) {
         self.view?.startLoading()
         SearchRepo.getImagesByQuery(query: query, page: page) { (success, model) in
             self.view?.finishLoading()
             if success {
-                guard let searchItem = (model as? SearchItem) ,let response = searchItem.response , let images = response.photos else{
+                guard let response = (model as? FlickerResponse) ,let searchItem = response.response , let images = searchItem.photos  else{
                     self.view?.error(error: nil)
                     return
                 }
-                self.view?.setPhotos(photos: images)
+                self.view?.setItem(searchItem: images)
             }else{
                 self.view?.error(error: nil)
             }
         }
     }
     // Mark : Search Groups
-    func searchGroup(query:String) {
+    func searchGroup(query:String,page:Int) {
         self.view?.startLoading()
-        SearchRepo.getGroupsByQuery(query: query) { (success, model) in
+        SearchRepo.getGroupsByQuery(query: query, page: page) { (success, model) in
             self.view?.finishLoading()
             if success {
-                guard let searchItem = (model as? SearchItem) ,let response = searchItem.response , let groups = response.groups else{
+                 guard let response = (model as? FlickerResponse) ,let searchItem = response.groupResponse , let groups = searchItem.groups else{
                     self.view?.error(error: nil)
                     return
                 }
+                self.view?.setItem(searchItem: groups)
             }else{
                 self.view?.error(error: nil)
             }
         }
     }
-    
-    func loadImageFrom(photo:Photo,indexPath:IndexPath) {
-        imageRepo.getImageFrom(photo: photo) { (image) in
-            self.view?.setImage(image: image, indexPath: indexPath)
+}
+extension SearchPresenter {
+    func loadImageFrom(searchItem: [Mappable],indexPath:IndexPath,type:SearchViewType) {
+        let url = type == .image ? (searchItem[indexPath.row] as? Photo)?.getImageURL() :(searchItem[indexPath.row] as? Group)?.getGroupIconURL()
+        if url != nil {
+            imageRepo.getImageFrom(url: url!) { (image) in
+                self.view?.setImage(image: image, indexPath: indexPath)
+            }
+        }else{
+            // error in url
         }
+     
     }
 }

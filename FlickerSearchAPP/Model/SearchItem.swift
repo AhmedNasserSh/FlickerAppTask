@@ -8,28 +8,30 @@
 
 import Foundation
 import ObjectMapper
-class SearchItem :BaseModel  {
-    var response : FlickerResponse?
-    
+class FlickerResponse :BaseModel  {
+    var response : SearchItem?
+    var groupResponse : SearchItem?
     override func mapping(map: Map) {
         super.mapping(map: map)
         response <- map["photos"]
+        groupResponse <- map["groups"]
     }
 }
-class FlickerResponse :Mappable {
+class SearchItem :Mappable {
     var page : Int?
     var pages : Int?
     var perpage : Int?
     var photos : [Photo]?
     var groups :[Group]?
     
+    init() {}
     required init?(map: Map) { }
-    
+
     func mapping(map: Map) {
         page <- map["page"]
         pages <- map["pages"]
         perpage <- map["perpage"]
         photos <- map["photo"]
-        groups <- map["groups"]
+        groups <- map["group"]
     }
 }

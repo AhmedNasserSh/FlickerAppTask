@@ -25,13 +25,8 @@ class ImageDownloadManger {
 }
 // Mark : Downloader
 extension ImageDownloadManger {
-    func getImageTask(photo :Photo) -> Observable<UIImage>?  {
+    func getImageTask(url :URL) -> Observable<UIImage>?  {
         let observer =  Observable<UIImage>.create { (observer) -> Disposable in
-            // image not found 
-            guard let url = photo.getImageURL()  else{
-                observer.onError(NSError(domain: "", code: 404, userInfo: nil))
-                return Disposables.create()
-            }
             //check for image in cache
             if let cachedImage = self.imageCache.object(forKey: url.absoluteString as NSString) {
                 print(":cach")

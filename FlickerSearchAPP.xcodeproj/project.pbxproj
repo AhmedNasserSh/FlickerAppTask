@@ -15,7 +15,6 @@
 		BE18A70E22BB5C55002C6E1A /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A70D22BB5C55002C6E1A /* SearchPresenter.swift */; };
 		BE18A71022BB5F1D002C6E1A /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A70F22BB5F1D002C6E1A /* SearchViewController.swift */; };
 		BE18A71322BB5F7B002C6E1A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A71222BB5F7B002C6E1A /* BaseViewController.swift */; };
-		BE18A71522BB7277002C6E1A /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A71422BB7277002C6E1A /* MainPresenter.swift */; };
 		BE18A71722BB88E1002C6E1A /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A71622BB88E1002C6E1A /* Group.swift */; };
 		BE18A71922BB8ADB002C6E1A /* SearchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18A71822BB8ADB002C6E1A /* SearchItem.swift */; };
 		BE1CB48622B7994B008C60D1 /* FlickerAPIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48522B7994B008C60D1 /* FlickerAPIManger.swift */; };
@@ -62,7 +61,6 @@
 		BE18A70D22BB5C55002C6E1A /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		BE18A70F22BB5F1D002C6E1A /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		BE18A71222BB5F7B002C6E1A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		BE18A71422BB7277002C6E1A /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		BE18A71622BB88E1002C6E1A /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		BE18A71822BB8ADB002C6E1A /* SearchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItem.swift; sourceTree = "<group>"; };
 		BE1CB48522B7994B008C60D1 /* FlickerAPIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerAPIManger.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				BE18A70722BB579A002C6E1A /* Bases */,
 				BE58DD9522BD555C00ECDFF2 /* Custom */,
 				BE18A70C22BB5C1A002C6E1A /* Search */,
-				BE18A71422BB7277002C6E1A /* MainPresenter.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,7 +498,6 @@
 				BE58DD9922BD55B400ECDFF2 /* SearchFooterView.swift in Sources */,
 				BE18A71022BB5F1D002C6E1A /* SearchViewController.swift in Sources */,
 				BE1D42D922B812A8001601F1 /* FlickerRequestWrapper.swift in Sources */,
-				BE18A71522BB7277002C6E1A /* MainPresenter.swift in Sources */,
 				BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */,
 				BE18A70E22BB5C55002C6E1A /* SearchPresenter.swift in Sources */,
 				BE58DDA422BD9FD200ECDFF2 /* ImageLayout.swift in Sources */,

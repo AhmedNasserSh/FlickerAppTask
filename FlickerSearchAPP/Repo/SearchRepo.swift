@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import Moya
 import ObjectMapper
-class SearchRepo :BaseRepo<SearchItem>{
+class SearchRepo :BaseRepo<FlickerResponse>{
     static let disposeBag = DisposeBag()
     
     // Mark : search Image
@@ -27,13 +27,14 @@ class SearchRepo :BaseRepo<SearchItem>{
     }
     
     // Mark : search Groups
-    static func getGroupsByQuery(query :String,completion:@escaping ApiHandler) {
+    static func getGroupsByQuery(query :String,page:Int,completion:@escaping ApiHandler) {
         moyaProvider
         .rx
-        .request(.getGroups(query: query))
+            .request(.getGroups(query: query, page: page))
         .mapJSON()
             .subscribe(onSuccess: { (json) in
                 print(json)
+                self.handleResult(json, completion: completion)
             }){ (error) in completion(false,nil)}
         .disposed(by: disposeBag)
     }

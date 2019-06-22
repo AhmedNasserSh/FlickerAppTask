@@ -11,8 +11,8 @@ import RxSwift
 class ImageRepo {
     let downloadManger = ImageDownloadManger()
     let bag = DisposeBag()
-    func getImageFrom(photo:Photo,completion :@escaping (UIImage) -> ()) {
-        downloadManger.getImageTask(photo: photo)?
+    func getImageFrom(url:URL,completion :@escaping (UIImage) -> ()) {
+        downloadManger.getImageTask(url: url)?
         .subscribeOn(downloadManger.backgroundWorkScheduler)
             .distinctUntilChanged()
             .observeOn(MainScheduler.asyncInstance)

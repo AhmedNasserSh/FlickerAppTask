@@ -8,12 +8,13 @@
 
 import Foundation
 import RxDataSources
+import ObjectMapper
 struct CellSectionModel {
     var header: String
     var items: [Item]
 }
 extension CellSectionModel: SectionModelType {
-    typealias Item = Photo
+    typealias Item = Mappable
     
     init(original: CellSectionModel, items: [Item]) {
         self = original

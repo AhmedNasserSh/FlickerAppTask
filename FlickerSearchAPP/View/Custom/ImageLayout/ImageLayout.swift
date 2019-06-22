@@ -41,7 +41,7 @@ class  ImageLayout :UICollectionViewFlowLayout {
                 let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
                 
                 let smallCellHeight: CGFloat = (contentCollectionView.frame.height - 2 * contentPadding - cellsPadding) / CGFloat(numberOfRows)
-                let largeCellHeight: CGFloat = smallCellHeight * 3 + cellsPadding
+                let largeCellHeight: CGFloat = smallCellHeight * 2 + cellsPadding
                 let cellWidth = (contentCollectionView.frame.width - 2 * contentPadding - cellsPadding) / 2
                 let addCellHeight = (contentCollectionView.frame.height - 2 * contentPadding - cellsPadding) / CGFloat(numberOfRows - 1)
                 let addCellWidth = contentCollectionView.frame.width - 2 * contentPadding
@@ -66,10 +66,10 @@ class  ImageLayout :UICollectionViewFlowLayout {
                 
             }
         }
-        contentSize.height = yOffset + 8
+        contentSize.height = yOffset + 18
         // adding the footer attributes
         if let footerAttr =  layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, at: IndexPath(item: 1, section: 0)) {
-            footerAttr.frame = CGRect(x: 0, y:  contentSize.height - 30, width: collectionView?.frame.width ?? 100, height: 50)
+            footerAttr.frame = CGRect(x: 0, y:  contentSize.height - 40, width: collectionView?.frame.width ?? 100, height: 60)
             cache.append(footerAttr)
             
         }

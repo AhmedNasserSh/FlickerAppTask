@@ -10,7 +10,9 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import ObjectMapper
 class SearchViewController: BaseViewController {
+    @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     var footerView :SearchFooterView?
@@ -18,7 +20,8 @@ class SearchViewController: BaseViewController {
     let presenter = SearchPresenter()
     let disposeBag = DisposeBag()
     var page = 1
-    var query = ""
+    var query = "Nature"
+    var currentType:SearchViewType = .image
 }
 // Mark : Controller Life Cycle
 extension SearchViewController {
@@ -31,6 +34,21 @@ extension SearchViewController {
         configureSearchBar()
         searchBarDidBeginEditing()
         searchBarCancelButton()
+    }
+ 
+    override func viewDidAppear(_ animated: Bool) {
+        setupFilterSegmentedContol()
+    }
+}
+// Mark : filter Segmented Control
+extension SearchViewController {
+    func setupFilterSegmentedContol(){
+        filterSegmentedControl.rx.selectedSegmentIndex
+            .subscribe(onNext: { [unowned self] index in
+                self.currentType = index == 0 ? .image :.group
+                // reset
+                self.reset(searchQuery: self.query)
+            }).disposed(by: disposeBag)
     }
 }
 // Mark : collectionView
@@ -72,7 +90,7 @@ extension SearchViewController :UICollectionViewDelegate,UICollectionViewDelegat
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         // Lazy Loading images
-        self.presenter.loadImageFrom(photo: photos.value[0].items[indexPath.row], indexPath: indexPath)
+        self.presenter.loadImageFrom(searchItem: photos.value[0].items, indexPath: indexPath, type: currentType)
         // Load more Images
         loadMore(indexPath: indexPath)
     }
@@ -99,7 +117,7 @@ extension SearchViewController {
     func searchBarDidBeginEditing(){
         searchBar.rx.textDidBeginEditing
             .subscribe(onNext: { [unowned self] in
-                self.page = 0
+                self.page = 1
                 self.searchBar.setShowsCancelButton(true, animated: true)
             }).disposed(by: disposeBag)
     }
@@ -119,12 +137,14 @@ extension SearchViewController :SearchView {
         self.photos.accept([])
         self.query = searchQuery
         self.useProgress = true
-        self.presenter.searchPhoto(query:searchQuery, page: self.page)
+        search(query: query, page: 1)
     }
-    
-    func setPhotos(photos: [Photo]) {
+    func search(query:String,page:Int) {
+        self.presenter.performQuery(query: query, page: page, type: currentType)
+    }
+    func setItem(searchItem:[Mappable]) {
         let currentPhotos = self.photos.value.count > 0 ?  self.photos.value[0].items : []
-        self.photos.accept([CellSectionModel(header:"", items: currentPhotos + photos)])
+        self.photos.accept([CellSectionModel(header:"", items:currentPhotos + searchItem)])
     }
     
     func setImage(image: UIImage, indexPath: IndexPath) {
