@@ -8,14 +8,8 @@
 
 import UIKit
 
-class PhotoCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
-    
+class PhotoCollectionViewCell: BaseCollectionViewCell {
     func reset() {
         self.imageView.image = #imageLiteral(resourceName: "no_image")
-    }
-    
-    func configure(image:UIImage) {
-        self.imageView.image = image
     }
 }

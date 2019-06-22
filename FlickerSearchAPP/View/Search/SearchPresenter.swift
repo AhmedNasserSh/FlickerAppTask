@@ -54,12 +54,26 @@ class SearchPresenter:BasePresenter<SearchView> {
                     self.view?.error(error: nil)
                     return
                 }
-                self.view?.setItem(searchItem: groups)
+                self.prepareGroups(searchItem: groups)
             }else{
                 self.view?.error(error: nil)
             }
         }
     }
+    func prepareGroups(searchItem:[Mappable]) {
+       let groups = searchItem.map { (element) -> Mappable in
+            if let group = element as? Group {
+                let members = Float (group.members ?? "0") ?? 0
+                let poolCount = Float (group.poolCount ?? "0") ?? 0
+                group.members = members / 1000 >= 1  ?  members / 1000 < 1000 ?  "\(members / 1000) k" : "\(members / 1000000) m"  : group.members
+                group.poolCount = poolCount / 1000 >= 1  ?  poolCount / 1000 < 1000 ?  "\(poolCount / 1000) k" : "\(poolCount / 1000000) m"  : group.poolCount
+                return group
+            }
+            return element
+        }
+        self.view?.setItem(searchItem: groups)
+    }
+
 }
 extension SearchPresenter {
     func loadImageFrom(searchItem: [Mappable],indexPath:IndexPath,type:SearchViewType) {
@@ -71,6 +85,5 @@ extension SearchPresenter {
         }else{
             // error in url
         }
-     
     }
 }

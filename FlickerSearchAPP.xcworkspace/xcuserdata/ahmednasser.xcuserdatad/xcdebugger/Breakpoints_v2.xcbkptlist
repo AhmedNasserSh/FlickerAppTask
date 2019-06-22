@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlickerSearchAPP/View/Search/SearchViewController.swift"
-            timestampString = "582900755.820588"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "setItem(searchItem:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "FlickerSearchAPP/View/Search/SearchPresenter.swift"
-            timestampString = "582900755.8211401"
+            timestampString = "582916032.057984"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "searchGroup(query:page:)"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "prepareGroups(searchItem:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

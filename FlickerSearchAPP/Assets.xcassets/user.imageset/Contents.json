@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "black-male-user-symbol.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "new-flickr-logo-2.jpg",
       "scale" : "2x"
     },
     {

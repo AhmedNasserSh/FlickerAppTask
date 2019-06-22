@@ -9,14 +9,13 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
 import ObjectMapper
 class SearchViewController: BaseViewController {
     @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     var footerView :SearchFooterView?
-    let photos:BehaviorRelay<[CellSectionModel]> = BehaviorRelay(value: [])
+    let searchItems:BehaviorRelay<[CellSectionModel]> = BehaviorRelay(value: [])
     let presenter = SearchPresenter()
     let disposeBag = DisposeBag()
     var page = 1
@@ -48,59 +47,8 @@ extension SearchViewController {
                 self.currentType = index == 0 ? .image :.group
                 // reset
                 self.reset(searchQuery: self.query)
+                self.setCollectionViewLayout()
             }).disposed(by: disposeBag)
-    }
-}
-// Mark : collectionView
-extension SearchViewController {
-    func registerFooterCell() {
-        let nib = UINib(nibName: "SearchFooterView", bundle: nil)
-        imageCollectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "SearchFooterView")
-    }
-    
-    func configureCollectionViewDataSource() {
-        let dataSource = RxCollectionViewSectionedReloadDataSource<CellSectionModel>(configureCell: { dataSource, collectionView, indexPath, item in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-            cell.reset()
-            return cell
-        })
-        dataSource.configureSupplementaryView = {(dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
-            self.footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "SearchFooterView", for: indexPath) as? SearchFooterView
-            return self.footerView!
-        }
-        photos.bind(to: imageCollectionView.rx.items(dataSource: dataSource)).disposed(by: disposeBag)
-    }
-    
-    func configureCollectionViewDelegate() {
-        imageCollectionView.rx.setDelegate(self).disposed(by: disposeBag)
-        imageCollectionView.rx.willDisplaySupplementaryView
-            .subscribe({ [unowned self] _  in
-                self.footerView?.configure()
-            }).disposed(by: disposeBag)
-        imageCollectionView.rx.didEndDisplayingSupplementaryView
-            .subscribe({ [unowned self] _  in
-                self.footerView?.dismiss()
-            }).disposed(by: disposeBag)
-    }
-}
-// Mark :Collection View Delegate
-extension SearchViewController :UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: self.view.frame.width, height: 50)
-    }
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        // Lazy Loading images
-        self.presenter.loadImageFrom(searchItem: photos.value[0].items, indexPath: indexPath, type: currentType)
-        // Load more Images
-        loadMore(indexPath: indexPath)
-    }
-
-    func loadMore(indexPath: IndexPath) {
-        if indexPath.row == photos.value[0].items.count - 4 {
-            page += 1
-            useProgress = false
-            self.presenter.searchPhoto(query: query, page: page )
-        }
     }
 }
 // Mark: Configure Search bar
@@ -134,7 +82,7 @@ extension SearchViewController {
 // Mark : SearchView Delegate
 extension SearchViewController :SearchView {
     func reset(searchQuery:String){
-        self.photos.accept([])
+        self.searchItems.accept([])
         self.query = searchQuery
         self.useProgress = true
         search(query: query, page: 1)
@@ -143,13 +91,14 @@ extension SearchViewController :SearchView {
         self.presenter.performQuery(query: query, page: page, type: currentType)
     }
     func setItem(searchItem:[Mappable]) {
-        let currentPhotos = self.photos.value.count > 0 ?  self.photos.value[0].items : []
-        self.photos.accept([CellSectionModel(header:"", items:currentPhotos + searchItem)])
+        let currentPhotos = self.searchItems.value.count > 0 ?  self.searchItems.value[0].items : []
+        self.searchItems.accept([CellSectionModel(header:"", items:currentPhotos + searchItem)])
     }
     
     func setImage(image: UIImage, indexPath: IndexPath) {
-        if let cell = imageCollectionView.cellForItem(at: indexPath) as? PhotoCollectionViewCell{
-            cell.configure(image: image)
+        if let cell = imageCollectionView.cellForItem(at: indexPath) as? BaseCollectionViewCell {
+            cell.loadImage(image)
+            
         }
     }
 }
