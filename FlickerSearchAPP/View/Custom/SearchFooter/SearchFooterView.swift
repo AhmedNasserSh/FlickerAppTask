@@ -20,7 +20,7 @@ class SearchFooterView: UICollectionReusableView {
     }
     
     func configure () {
-        animationDots = animation.startDotsAnimation(superView: progressView, dotsColor: #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1))
+        animationDots = animation.startDotsAnimation(superView: progressView, dotsColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         progressView.addSubview(animationDots!)
     }
     

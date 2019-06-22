@@ -18,7 +18,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXj-0g-Q3s">
                     <rect key="frame" x="162.5" y="0.0" width="50" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="NSB-xD-nL5"/>
                         <constraint firstAttribute="height" constant="50" id="uYr-Q4-RVJ"/>

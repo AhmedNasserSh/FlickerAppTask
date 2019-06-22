@@ -18,29 +18,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Flicker" translatesAutoresizingMaskIntoConstraints="NO" id="BSS-Ru-7U5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="iLL-16-tXj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search Flicker" translatesAutoresizingMaskIntoConstraints="NO" id="BSS-Ru-7U5">
                                 <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="g35-42-1RQ">
                                 <rect key="frame" x="0.0" y="84" width="375" height="575"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j7m-bE-Vf9">
-                                    <size key="itemSize" width="200" height="200"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="50" height="50"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewLayout key="collectionViewLayout" id="ka4-fd-iqq" customClass="ImageLayout" customModule="FlickerSearchAPP" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCollectionViewCell" id="CJV-Qr-bbf" customClass="PhotoCollectionViewCell" customModule="FlickerSearchAPP" customModuleProvider="target">
-                                        <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="ZLa-5w-yJ9">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -55,19 +55,19 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="SearchFooterView" id="LS0-bM-9OT">
-                                    <rect key="frame" x="0.0" y="200" width="375" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iLL-16-tXj" secondAttribute="trailing" id="2UG-4b-OZW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="g35-42-1RQ" secondAttribute="trailing" id="CSD-HE-f7B"/>
                             <constraint firstItem="BSS-Ru-7U5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="HwS-Mc-qoD"/>
+                            <constraint firstItem="iLL-16-tXj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Lb3-hB-XsG"/>
                             <constraint firstItem="g35-42-1RQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tm0-At-9hv"/>
                             <constraint firstItem="BSS-Ru-7U5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="W5y-I0-cNH"/>
                             <constraint firstItem="g35-42-1RQ" firstAttribute="top" secondItem="BSS-Ru-7U5" secondAttribute="bottom" constant="8" id="Yzg-rb-at3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iLL-16-tXj" secondAttribute="bottom" id="ex0-W9-FqQ"/>
+                            <constraint firstItem="iLL-16-tXj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gRa-td-M1f"/>
                             <constraint firstItem="BSS-Ru-7U5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hNI-cr-9ZO"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g35-42-1RQ" secondAttribute="bottom" constant="8" id="kHp-Jl-NKA"/>
                         </constraints>
@@ -92,6 +92,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="530" height="689"/>
         <image name="no_image" width="525" height="421"/>
     </resources>
 </document>

@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
-
 class SearchViewController: BaseViewController {
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -67,14 +66,17 @@ extension SearchViewController {
     }
 }
 // Mark :Collection View Delegate
-extension SearchViewController :UICollectionViewDelegate {
+extension SearchViewController :UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: self.view.frame.width, height: 50)
+    }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         // Lazy Loading images
         self.presenter.loadImageFrom(photo: photos.value[0].items[indexPath.row], indexPath: indexPath)
         // Load more Images
         loadMore(indexPath: indexPath)
     }
-    
+
     func loadMore(indexPath: IndexPath) {
         if indexPath.row == photos.value[0].items.count - 4 {
             page += 1

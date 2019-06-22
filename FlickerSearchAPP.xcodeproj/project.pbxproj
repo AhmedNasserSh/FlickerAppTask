@@ -32,6 +32,7 @@
 		BE58DD9B22BD55C300ECDFF2 /* SearchFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE58DD9A22BD55C300ECDFF2 /* SearchFooterView.xib */; };
 		BE58DD9D22BD716D00ECDFF2 /* CellSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DD9C22BD716D00ECDFF2 /* CellSectionModel.swift */; };
 		BE58DDA122BD8C0A00ECDFF2 /* DotsAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDA022BD8C0A00ECDFF2 /* DotsAnimation.swift */; };
+		BE58DDA422BD9FD200ECDFF2 /* ImageLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDA322BD9FD200ECDFF2 /* ImageLayout.swift */; };
 		BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224CF22B6977F006A3C32 /* AppDelegate.swift */; };
 		BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D322B6977F006A3C32 /* Main.storyboard */; };
 		BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D922B69781006A3C32 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		BE58DD9A22BD55C300ECDFF2 /* SearchFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchFooterView.xib; sourceTree = "<group>"; };
 		BE58DD9C22BD716D00ECDFF2 /* CellSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSectionModel.swift; sourceTree = "<group>"; };
 		BE58DDA022BD8C0A00ECDFF2 /* DotsAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotsAnimation.swift; sourceTree = "<group>"; };
+		BE58DDA322BD9FD200ECDFF2 /* ImageLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLayout.swift; sourceTree = "<group>"; };
 		BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerSearchAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA224CF22B6977F006A3C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA224D422B6977F006A3C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		BE58DD9522BD555C00ECDFF2 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				BE58DDA222BD9FBB00ECDFF2 /* ImageLayout */,
 				BE58DD9F22BD8BF700ECDFF2 /* DotsAnimation */,
 				BE58DD9E22BD8BE500ECDFF2 /* SearchFooter */,
 			);
@@ -242,6 +245,14 @@
 				BE58DDA022BD8C0A00ECDFF2 /* DotsAnimation.swift */,
 			);
 			path = DotsAnimation;
+			sourceTree = "<group>";
+		};
+		BE58DDA222BD9FBB00ECDFF2 /* ImageLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE58DDA322BD9FD200ECDFF2 /* ImageLayout.swift */,
+			);
+			path = ImageLayout;
 			sourceTree = "<group>";
 		};
 		BEA224C322B6977F006A3C32 = {
@@ -493,6 +504,7 @@
 				BE18A71522BB7277002C6E1A /* MainPresenter.swift in Sources */,
 				BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */,
 				BE18A70E22BB5C55002C6E1A /* SearchPresenter.swift in Sources */,
+				BE58DDA422BD9FD200ECDFF2 /* ImageLayout.swift in Sources */,
 				BE1CB48922B79D71008C60D1 /* SearchRepo.swift in Sources */,
 				BE18A70B22BB5BCB002C6E1A /* BaseView.swift in Sources */,
 			);
