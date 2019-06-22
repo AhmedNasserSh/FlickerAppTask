@@ -54,7 +54,3 @@ extension FlickerAPIManger: TargetType {
         return "{}".data(using: String.Encoding.utf8)!
     }
 }
-public func url(route: TargetType) -> String {
-    let url = route.baseURL.appendingPathComponent(route.path).absoluteString
-    return url
-}

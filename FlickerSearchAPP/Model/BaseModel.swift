@@ -13,8 +13,12 @@ class BaseModel :Mappable {
     var stat :String?
     var message:String?
     
+    init() {
+    }
     required init?(map: Map) {}
     func mapping(map: Map) {
+        LoggerRepo.logInfo("BaseModel:mapping")
+        LoggerRepo.logDebug("BaseModel:mapping ,Parmters:(map: Map)")
         statCode <- map["code"]
         stat <- map["stat"]
         message <- map["message"]

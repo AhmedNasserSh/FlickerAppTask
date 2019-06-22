@@ -20,7 +20,6 @@
 		BE1CB48622B7994B008C60D1 /* FlickerAPIManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48522B7994B008C60D1 /* FlickerAPIManger.swift */; };
 		BE1CB48922B79D71008C60D1 /* SearchRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48822B79D71008C60D1 /* SearchRepo.swift */; };
 		BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1CB48B22B7AE3E008C60D1 /* Constant.swift */; };
-		BE1D42D422B7FB4F001601F1 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42D322B7FB4F001601F1 /* ErrorModel.swift */; };
 		BE1D42D922B812A8001601F1 /* FlickerRequestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42D822B812A8001601F1 /* FlickerRequestWrapper.swift */; };
 		BE1D42DB22B81441001601F1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42DA22B81441001601F1 /* Photo.swift */; };
 		BE1D42DD22B81B66001601F1 /* BaseRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D42DC22B81B66001601F1 /* BaseRepo.swift */; };
@@ -35,6 +34,13 @@
 		BE58DDAA22BE612100ECDFF2 /* GroupCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDA922BE612100ECDFF2 /* GroupCollectionViewCell.swift */; };
 		BE58DDAC22BE63BD00ECDFF2 /* SearchViewController+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDAB22BE63BD00ECDFF2 /* SearchViewController+Layout.swift */; };
 		BE58DDAE22BE678200ECDFF2 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDAD22BE678200ECDFF2 /* BaseCollectionViewCell.swift */; };
+		BE58DDB522BEBA0300ECDFF2 /* Groups in Resources */ = {isa = PBXBuildFile; fileRef = BE58DDB422BEBA0300ECDFF2 /* Groups */; };
+		BE58DDB722BEBAFA00ECDFF2 /* Photos in Resources */ = {isa = PBXBuildFile; fileRef = BE58DDB622BEBAFA00ECDFF2 /* Photos */; };
+		BE58DDBA22BEBB2600ECDFF2 /* MockRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDB922BEBB2600ECDFF2 /* MockRepo.swift */; };
+		BE58DDBB22BEBFE900ECDFF2 /* Photos in Resources */ = {isa = PBXBuildFile; fileRef = BE58DDB622BEBAFA00ECDFF2 /* Photos */; };
+		BE58DDBC22BEBFED00ECDFF2 /* Groups in Resources */ = {isa = PBXBuildFile; fileRef = BE58DDB422BEBA0300ECDFF2 /* Groups */; };
+		BE58DDBE22BEC7C700ECDFF2 /* FlickerSearchAppBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDBD22BEC7C700ECDFF2 /* FlickerSearchAppBusiness.swift */; };
+		BE58DDC022BEDDC000ECDFF2 /* LoggerRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE58DDBF22BEDDC000ECDFF2 /* LoggerRepo.swift */; };
 		BEA224D022B6977F006A3C32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224CF22B6977F006A3C32 /* AppDelegate.swift */; };
 		BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D322B6977F006A3C32 /* Main.storyboard */; };
 		BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D922B69781006A3C32 /* Assets.xcassets */; };
@@ -69,7 +75,6 @@
 		BE1CB48522B7994B008C60D1 /* FlickerAPIManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerAPIManger.swift; sourceTree = "<group>"; };
 		BE1CB48822B79D71008C60D1 /* SearchRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepo.swift; sourceTree = "<group>"; };
 		BE1CB48B22B7AE3E008C60D1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		BE1D42D322B7FB4F001601F1 /* ErrorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		BE1D42D822B812A8001601F1 /* FlickerRequestWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerRequestWrapper.swift; sourceTree = "<group>"; };
 		BE1D42DA22B81441001601F1 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		BE1D42DC22B81B66001601F1 /* BaseRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepo.swift; sourceTree = "<group>"; };
@@ -84,6 +89,11 @@
 		BE58DDA922BE612100ECDFF2 /* GroupCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewCell.swift; sourceTree = "<group>"; };
 		BE58DDAB22BE63BD00ECDFF2 /* SearchViewController+Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+Layout.swift"; sourceTree = "<group>"; };
 		BE58DDAD22BE678200ECDFF2 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		BE58DDB422BEBA0300ECDFF2 /* Groups */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Groups; sourceTree = "<group>"; };
+		BE58DDB622BEBAFA00ECDFF2 /* Photos */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Photos; sourceTree = "<group>"; };
+		BE58DDB922BEBB2600ECDFF2 /* MockRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockRepo.swift; sourceTree = "<group>"; };
+		BE58DDBD22BEC7C700ECDFF2 /* FlickerSearchAppBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerSearchAppBusiness.swift; sourceTree = "<group>"; };
+		BE58DDBF22BEDDC000ECDFF2 /* LoggerRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerRepo.swift; sourceTree = "<group>"; };
 		BEA224CC22B6977F006A3C32 /* FlickerSearchAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlickerSearchAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA224CF22B6977F006A3C32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA224D422B6977F006A3C32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -181,6 +191,8 @@
 				BE1D42DC22B81B66001601F1 /* BaseRepo.swift */,
 				BE1CB48822B79D71008C60D1 /* SearchRepo.swift */,
 				BE3C011022BAA83B0046B69F /* ImageRepo.swift */,
+				BE58DDB922BEBB2600ECDFF2 /* MockRepo.swift */,
+				BE58DDBF22BEDDC000ECDFF2 /* LoggerRepo.swift */,
 			);
 			path = Repo;
 			sourceTree = "<group>";
@@ -197,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				BE1D42E122B81DA9001601F1 /* BaseModel.swift */,
-				BE1D42D322B7FB4F001601F1 /* ErrorModel.swift */,
 				BE18A71822BB8ADB002C6E1A /* SearchItem.swift */,
 				BE1D42DA22B81441001601F1 /* Photo.swift */,
 				BE18A71622BB88E1002C6E1A /* Group.swift */,
@@ -261,6 +272,23 @@
 			path = ImageLayout;
 			sourceTree = "<group>";
 		};
+		BE58DDB222BEB9D100ECDFF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE58DDB322BEB9DC00ECDFF2 /* Mockups */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BE58DDB322BEB9DC00ECDFF2 /* Mockups */ = {
+			isa = PBXGroup;
+			children = (
+				BE58DDB622BEBAFA00ECDFF2 /* Photos */,
+				BE58DDB422BEBA0300ECDFF2 /* Groups */,
+			);
+			path = Mockups;
+			sourceTree = "<group>";
+		};
 		BEA224C322B6977F006A3C32 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +317,7 @@
 				BE1CB48022B796D1008C60D1 /* Network */,
 				BE1CB48722B79D59008C60D1 /* Repo */,
 				BE3C010C22B9EEA40046B69F /* View */,
+				BE58DDB222BEB9D100ECDFF2 /* Resources */,
 				BEA224CF22B6977F006A3C32 /* AppDelegate.swift */,
 				BEA224D322B6977F006A3C32 /* Main.storyboard */,
 				BEA224D922B69781006A3C32 /* Assets.xcassets */,
@@ -302,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				BEA224E722B69781006A3C32 /* FlickerSearchAPPTests.swift */,
+				BE58DDBD22BEC7C700ECDFF2 /* FlickerSearchAppBusiness.swift */,
 				BEA224E922B69781006A3C32 /* Info.plist */,
 			);
 			path = FlickerSearchAPPTests;
@@ -391,7 +421,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE58DDBB22BEBFE900ECDFF2 /* Photos in Resources */,
 				BEA224DD22B69781006A3C32 /* LaunchScreen.storyboard in Resources */,
+				BE58DDBC22BEBFED00ECDFF2 /* Groups in Resources */,
 				BE58DD9B22BD55C300ECDFF2 /* SearchFooterView.xib in Resources */,
 				BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */,
 				BEA224D522B6977F006A3C32 /* Main.storyboard in Resources */,
@@ -402,6 +434,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE58DDB522BEBA0300ECDFF2 /* Groups in Resources */,
+				BE58DDB722BEBAFA00ECDFF2 /* Photos in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,7 +525,6 @@
 			files = (
 				BE1D42DD22B81B66001601F1 /* BaseRepo.swift in Sources */,
 				BE18A70922BB5BAA002C6E1A /* BasePresenter.swift in Sources */,
-				BE1D42D422B7FB4F001601F1 /* ErrorModel.swift in Sources */,
 				BE3C011122BAA83B0046B69F /* ImageRepo.swift in Sources */,
 				BE58DDAC22BE63BD00ECDFF2 /* SearchViewController+Layout.swift in Sources */,
 				BE18A71922BB8ADB002C6E1A /* SearchItem.swift in Sources */,
@@ -501,6 +534,7 @@
 				BE18A71722BB88E1002C6E1A /* Group.swift in Sources */,
 				BE1CB48622B7994B008C60D1 /* FlickerAPIManger.swift in Sources */,
 				BE58DDAE22BE678200ECDFF2 /* BaseCollectionViewCell.swift in Sources */,
+				BE58DDBA22BEBB2600ECDFF2 /* MockRepo.swift in Sources */,
 				BE1D42DB22B81441001601F1 /* Photo.swift in Sources */,
 				BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */,
 				BE58DDAA22BE612100ECDFF2 /* GroupCollectionViewCell.swift in Sources */,
@@ -515,6 +549,7 @@
 				BE58DDA422BD9FD200ECDFF2 /* ImageLayout.swift in Sources */,
 				BE1CB48922B79D71008C60D1 /* SearchRepo.swift in Sources */,
 				BE18A70B22BB5BCB002C6E1A /* BaseView.swift in Sources */,
+				BE58DDC022BEDDC000ECDFF2 /* LoggerRepo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE58DDBE22BEC7C700ECDFF2 /* FlickerSearchAppBusiness.swift in Sources */,
 				BEA224E822B69781006A3C32 /* FlickerSearchAPPTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

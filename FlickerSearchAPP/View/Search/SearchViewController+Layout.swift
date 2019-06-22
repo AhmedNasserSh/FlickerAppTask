@@ -19,17 +19,15 @@ extension SearchViewController {
                 layout.scrollDirection = .vertical
                 layout.sectionInset = UIEdgeInsets(top: 0, left: 0  , bottom: 0, right: 0  )
                 layout.minimumLineSpacing = 10
-                layout.itemSize = CGSize(width: self.view.frame.width - 40, height: 80)
+                layout.itemSize = CGSize(width: self.view.frame.width - 20, height: 80)
                 return layout
             }()
         }else{
-            layout = {
-                return ImageLayout()
-            }()
+            layout = {return ImageLayout()}()
         }
         imageCollectionView.setCollectionViewLayout(layout!, animated: true, completion: nil)
     }
-    func configureCellIndexPath (indexPath:IndexPath) -> UICollectionViewCell {
+    func configureCellForIndexPath (indexPath:IndexPath) -> UICollectionViewCell {
         if currentType == .image {
             let cell = imageCollectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
             cell.reset()
@@ -50,7 +48,7 @@ extension SearchViewController {
     
     func configureCollectionViewDataSource() {
         let dataSource = RxCollectionViewSectionedReloadDataSource<CellSectionModel>(configureCell: { dataSource, collectionView, indexPath, item in
-            return self.configureCellIndexPath(indexPath: indexPath)
+            return self.configureCellForIndexPath(indexPath: indexPath)
         })
         dataSource.configureSupplementaryView = {(dataSource, collectionView, kind, indexPath) -> UICollectionReusableView in
             self.footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "SearchFooterView", for: indexPath) as? SearchFooterView
@@ -76,18 +74,11 @@ extension SearchViewController :UICollectionViewDelegate,UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.width, height: 50)
     }
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         // Lazy Loading images
         self.presenter.loadImageFrom(searchItem: searchItems.value[0].items, indexPath: indexPath, type: currentType)
         // Load more Images
-        loadMore(indexPath: indexPath)
-    }
-    
-    func loadMore(indexPath: IndexPath) {
-        if indexPath.row == searchItems.value[0].items.count - 4 {
-            page += 1
-            useProgress = false
-            self.search(query: query, page: page)
-        }
+        self.presenter.loadMore(indexPath: indexPath, cellItems: self.searchItems.value, query: query, page: page, type: currentType)
     }
 }

@@ -13,6 +13,8 @@ class FlickerResponse :BaseModel  {
     var groupResponse : SearchItem?
     override func mapping(map: Map) {
         super.mapping(map: map)
+        LoggerRepo.logInfo("FlickerResponse:mapping")
+        LoggerRepo.logDebug("FlickerResponse:mapping ,Parmters:(map: Map)")
         response <- map["photos"]
         groupResponse <- map["groups"]
     }
@@ -28,6 +30,8 @@ class SearchItem :Mappable {
     required init?(map: Map) { }
 
     func mapping(map: Map) {
+        LoggerRepo.logInfo("SearchItem:mapping")
+        LoggerRepo.logDebug("SearchItem:mapping ,Parmters:(map: Map)")
         page <- map["page"]
         pages <- map["pages"]
         perpage <- map["perpage"]

@@ -14,6 +14,9 @@ class SearchViewController: BaseViewController {
     @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var errorView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     var footerView :SearchFooterView?
     let searchItems:BehaviorRelay<[CellSectionModel]> = BehaviorRelay(value: [])
     let presenter = SearchPresenter()
@@ -26,6 +29,7 @@ class SearchViewController: BaseViewController {
 extension SearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSLog("SearchViewController :%@ called", "viewDidLoad")
         presenter.attachView(view: self)
         registerFooterCell()
         configureCollectionViewDataSource()
@@ -79,26 +83,38 @@ extension SearchViewController {
             }).disposed(by: disposeBag)
     }
 }
-// Mark : SearchView Delegate
+// Mark : SearchView  Delegate
 extension SearchViewController :SearchView {
     func reset(searchQuery:String){
         self.searchItems.accept([])
         self.query = searchQuery
         self.useProgress = true
+        errorView.isHidden = true
+        imageCollectionView.isHidden = false
         search(query: query, page: 1)
     }
+    
     func search(query:String,page:Int) {
-        self.presenter.performQuery(query: query, page: page, type: currentType)
+        self.presenter.performQuery(cellItems:self.searchItems.value,query: query, page: page, type: currentType)
     }
-    func setItem(searchItem:[Mappable]) {
-        let currentPhotos = self.searchItems.value.count > 0 ?  self.searchItems.value[0].items : []
-        self.searchItems.accept([CellSectionModel(header:"", items:currentPhotos + searchItem)])
+    
+    func setItem(cellItems:[CellSectionModel],page:Int) {
+        self.useProgress = false
+        self.page = page
+        self.searchItems.accept(cellItems)
+        footerView?.dismiss()
     }
     
     func setImage(image: UIImage, indexPath: IndexPath) {
         if let cell = imageCollectionView.cellForItem(at: indexPath) as? BaseCollectionViewCell {
             cell.loadImage(image)
-            
         }
     }
+    
+    override func errorMessage(error: String?) {
+        errorView.isHidden = false
+        imageCollectionView.isHidden = true
+        errorLabel.text = error
+    }
+
 }

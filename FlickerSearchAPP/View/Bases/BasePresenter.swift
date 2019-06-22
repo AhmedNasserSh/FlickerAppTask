@@ -11,9 +11,13 @@ class BasePresenter<T> {
     var view: T?
     func attachView(view: T) {
         self.view = view
+        LoggerRepo.logInfo("BasePresenter<T>:attachView")
+        LoggerRepo.logDebug("BasePresenter<T>:attachView,Parmters:()")
     }
     func deattachView(){
         self.view = nil
+        LoggerRepo.logInfo("BasePresenter<T>:deattachView")
+        LoggerRepo.logDebug("BasePresenter<T>:deattachView,Parmters:()")
     }
 }
 

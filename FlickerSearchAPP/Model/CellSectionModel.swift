@@ -17,6 +17,8 @@ extension CellSectionModel: SectionModelType {
     typealias Item = Mappable
     
     init(original: CellSectionModel, items: [Item]) {
+        LoggerRepo.logInfo("CellSectionModel:init")
+        LoggerRepo.logDebug("CellSectionModel:init ,Parmters:(original: CellSectionModel, items: [Item])")
         self = original
         self.items = items
     }

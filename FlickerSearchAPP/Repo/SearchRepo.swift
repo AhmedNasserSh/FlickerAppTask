@@ -15,27 +15,38 @@ class SearchRepo :BaseRepo<FlickerResponse>{
     
     // Mark : search Image
     static func getImagesByQuery(query:String,page:Int,completion:@escaping ApiHandler) {
+        LoggerRepo.logInfo("SearchRepo:getImagesByQuery")
+        LoggerRepo.logDebug("SearchRepo:getImagesByQuery ,Parmters:(query:String,page:Int,completion:@escaping ApiHandler)")
         moyaProvider
             .rx
             .request(.getImages(query: query, page: page))
             .mapJSON()
             .subscribe(onSuccess: { (json) in
-                print(json)
+                LoggerRepo.logDebug("SearchRepo:getImagesByQuery ,Response:\(json)")
                 self.handleResult(json, completion: completion)
-            }) { (error) in completion(false,nil)}
+            }) { (error) in
+                completion(false,nil)
+                LoggerRepo.logWarn("SearchRepo:getImagesByQuery ,Error:\(error)")
+
+            }
             .disposed(by: disposeBag)
     }
     
     // Mark : search Groups
     static func getGroupsByQuery(query :String,page:Int,completion:@escaping ApiHandler) {
+        LoggerRepo.logInfo("SearchRepo:getGroupsByQuery")
+        LoggerRepo.logDebug("SearchRepo:getGroupsByQuery ,Parmters:(query:String,page:Int,completion:@escaping ApiHandler)")
         moyaProvider
         .rx
-            .request(.getGroups(query: query, page: page))
+        .request(.getGroups(query: query, page: page))
         .mapJSON()
             .subscribe(onSuccess: { (json) in
-                print(json)
+                LoggerRepo.logDebug("SearchRepo:getGroupsByQuery ,Response:\(json)")
                 self.handleResult(json, completion: completion)
-            }){ (error) in completion(false,nil)}
+            }){ (error) in
+                completion(false,nil)
+                LoggerRepo.logWarn("SearchRepo:getGroupsByQuery ,Error:\(error)")
+            }
         .disposed(by: disposeBag)
     }
 }

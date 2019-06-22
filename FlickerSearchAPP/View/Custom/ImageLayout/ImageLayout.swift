@@ -8,9 +8,6 @@
 
 import Foundation
 import UIKit
-protocol ImageLayoutDelegate {
-    func indexForSupplementaryView(ofKind elementKind: String) -> IndexPath?
-}
 class  ImageLayout :UICollectionViewFlowLayout {
     let contentPadding :CGFloat = 10
     let cellsPadding :CGFloat = 7
@@ -25,6 +22,8 @@ class  ImageLayout :UICollectionViewFlowLayout {
     
     override func prepare() {
         super.prepare()
+        LoggerRepo.logInfo("ImageLayout:prepare")
+        LoggerRepo.logDebug("ImageLayout:prepare,Parmters:()")
         guard let contentCollectionView = collectionView else {
             return
         }
@@ -76,7 +75,8 @@ class  ImageLayout :UICollectionViewFlowLayout {
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
+        LoggerRepo.logInfo("ImageLayout:layoutAttributesForElements")
+        LoggerRepo.logDebug("ImageLayout:layoutAttributesForElements,Parmters:(in rect: CGRect) -> [UICollectionViewLayoutAttributes]?")
         var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
         for attributes in cache {
             if attributes.frame.intersects(rect) {
@@ -87,10 +87,14 @@ class  ImageLayout :UICollectionViewFlowLayout {
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        LoggerRepo.logInfo("ImageLayout:layoutAttributesForItem")
+        LoggerRepo.logDebug("ImageLayout:layoutAttributesForItem,Parmters:(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes?")
         return cache[indexPath.item]
     }
     
     override func layoutAttributesForSupplementaryView(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        LoggerRepo.logInfo("ImageLayout:layoutAttributesForSupplementaryView")
+        LoggerRepo.logDebug("ImageLayout:layoutAttributesForSupplementaryView,Parmters:(ofKind elementKind: String, at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? ")
         return super.layoutAttributesForSupplementaryView(ofKind: elementKind, at: indexPath)
     }
 

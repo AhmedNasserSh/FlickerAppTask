@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-class Group :Mappable {
+class Group :BaseModel {
     var farm : Int?
     var id : String?
     var server : String?
@@ -17,13 +17,10 @@ class Group :Mappable {
     var members :String?
     var poolCount :String?
     var topicCount :String?
-    
-    init() {
-    }
-    
-    required init?(map: Map) { }
-    
-    func mapping(map: Map) {
+
+    override func mapping(map: Map) {
+        LoggerRepo.logInfo("Group:mapping")
+        LoggerRepo.logDebug("Group:mapping ,Parmters:(map: Map)")
         farm <- map["iconfarm"]
         id <- map["nsid"]
         server <- map["iconserver"]
@@ -35,6 +32,8 @@ class Group :Mappable {
     }
 
     func getGroupIconURL(_ size:String = "m") -> URL? {
+        LoggerRepo.logInfo("Group:getGroupIconURL")
+        LoggerRepo.logDebug("Group:getGroupIconURL ,Parmters:(_ size:String = m)")
         guard let i = id  else{ return nil}
         if let url =  URL(string: "https://flickr.com/buddyicons/\(i).jpg") {
             return url

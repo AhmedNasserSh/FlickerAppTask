@@ -26,10 +26,13 @@ class ImageDownloadManger {
 // Mark : Downloader
 extension ImageDownloadManger {
     func getImageTask(url :URL) -> Observable<UIImage>?  {
+        LoggerRepo.logInfo("ImageDownloadManger:getImageTask")
+        LoggerRepo.logDebug("ImageDownloadManger:getImageTask ,Parmters:(url :URL) -> Observable<UIImage>?")
+        
         let observer =  Observable<UIImage>.create { (observer) -> Disposable in
             //check for image in cache
             if let cachedImage = self.imageCache.object(forKey: url.absoluteString as NSString) {
-                print(":cach")
+                LoggerRepo.logDebug("ImageDownloadManger:getImageTask ,Cahed Image Loaded:\(cachedImage)")
                 observer.onNext(cachedImage)
             }else{
                 // download the image
@@ -39,8 +42,10 @@ extension ImageDownloadManger {
                     .mapImage()
                     .subscribe(onSuccess: { (image) in
                         self.imageCache.setObject(image!, forKey: url.absoluteString as NSString)
+                        LoggerRepo.logDebug("ImageDownloadManger:getImageTask ,new Image Loaded:\(String(describing: image))")
                         observer.onNext(image!)
                     }, onError: { (error) in
+                        LoggerRepo.logWarn("ImageDownloadManger:getImageTask ,new Image download Error:\(error)")
                         observer.onError(error)
                     }).disposed(by: self.bag)
             }

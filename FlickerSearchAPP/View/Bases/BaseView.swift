@@ -7,9 +7,8 @@
 //
 
 import Foundation
-protocol BaseView {
+@objc protocol BaseView {
     func startLoading()
     func finishLoading()
-    func error(error:ErrorModel?)
-    func message(message:String)
+    @objc func errorMessage(error: String?)
 }

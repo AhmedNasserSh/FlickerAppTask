@@ -14,14 +14,18 @@ enum SearchViewType {
     case image
 }
 protocol SearchView:BaseView {
-    func setItem(searchItem:[Mappable])
+    func setItem(cellItems:[CellSectionModel],page:Int)
     func setImage(image:UIImage,indexPath:IndexPath)
 }
 class SearchPresenter:BasePresenter<SearchView> {
     let imageRepo =  ImageRepo()
     var currentType :SearchViewType = .image
-    func performQuery(query:String,page:Int,type:SearchViewType) {
-        currentType = type
+    var currentMappleItem :[Mappable]?
+    var page = 0
+    func performQuery(cellItems:[CellSectionModel],query:String,page:Int,type:SearchViewType) {
+        self.currentMappleItem = cellItems.count > 0 ?  cellItems[0].items : []
+        self.currentType = type
+        self.page = page
         if type == .image {
             searchPhoto(query: query, page: page)
         }else{
@@ -35,12 +39,12 @@ class SearchPresenter:BasePresenter<SearchView> {
             self.view?.finishLoading()
             if success {
                 guard let response = (model as? FlickerResponse) ,let searchItem = response.response , let images = searchItem.photos  else{
-                    self.view?.error(error: nil)
+                    self.view?.errorMessage(error: "No Images Available")
                     return
                 }
-                self.view?.setItem(searchItem: images)
+                self.setItems(items: images)
             }else{
-                self.view?.error(error: nil)
+                self.view?.errorMessage(error: "No Images Available")
             }
         }
     }
@@ -51,17 +55,42 @@ class SearchPresenter:BasePresenter<SearchView> {
             self.view?.finishLoading()
             if success {
                  guard let response = (model as? FlickerResponse) ,let searchItem = response.groupResponse , let groups = searchItem.groups else{
-                    self.view?.error(error: nil)
+                    self.view?.errorMessage(error: "No Groups Available")
                     return
                 }
                 self.prepareGroups(searchItem: groups)
             }else{
-                self.view?.error(error: nil)
+                self.view?.errorMessage(error: "No Groups Available")
             }
         }
     }
+    
+}
+// Mark : Hlper functions
+extension SearchPresenter {
+    // append current items to new items
+    func setItems(items:[Mappable]) {
+        let cellItems =  [CellSectionModel(header:"", items: (currentMappleItem ?? []) + items)]
+        if cellItems[0].items.count > 0 {
+            self.view?.setItem(cellItems: cellItems, page: page)
+        }else{
+            self.view?.errorMessage(error: currentType == .image ? "No Images Available":"No Groups Available")
+        }
+    }
+    func loadImageFrom(searchItem: [Mappable],indexPath:IndexPath,type:SearchViewType) {
+        let url = type == .image ? (searchItem[indexPath.row] as? Photo)?.getImageURL() :(searchItem[indexPath.row] as? Group)?.getGroupIconURL()
+        if url != nil {
+            imageRepo.getImageFrom(url: url!) { (image) in
+                self.view?.setImage(image: image, indexPath: indexPath)
+            }
+        }else{
+            // error in url
+            self.view?.setImage(image: UIImage(named: "no_image")!, indexPath: indexPath)
+        }
+    }
+    
     func prepareGroups(searchItem:[Mappable]) {
-       let groups = searchItem.map { (element) -> Mappable in
+        let groups = searchItem.map { (element) -> Mappable in
             if let group = element as? Group {
                 let members = Float (group.members ?? "0") ?? 0
                 let poolCount = Float (group.poolCount ?? "0") ?? 0
@@ -71,19 +100,13 @@ class SearchPresenter:BasePresenter<SearchView> {
             }
             return element
         }
-        self.view?.setItem(searchItem: groups)
+        self.setItems(items: groups)
     }
 
-}
-extension SearchPresenter {
-    func loadImageFrom(searchItem: [Mappable],indexPath:IndexPath,type:SearchViewType) {
-        let url = type == .image ? (searchItem[indexPath.row] as? Photo)?.getImageURL() :(searchItem[indexPath.row] as? Group)?.getGroupIconURL()
-        if url != nil {
-            imageRepo.getImageFrom(url: url!) { (image) in
-                self.view?.setImage(image: image, indexPath: indexPath)
-            }
-        }else{
-            // error in url
+    func loadMore(indexPath: IndexPath,cellItems:[CellSectionModel],query:String,page:Int,type:SearchViewType) {
+        let currentItems = cellItems.count > 0 ?  cellItems[0].items : []
+        if indexPath.row == currentItems.count - 4 {
+            self.performQuery(cellItems: cellItems, query: query, page: page + 1, type: type)
         }
     }
 }
