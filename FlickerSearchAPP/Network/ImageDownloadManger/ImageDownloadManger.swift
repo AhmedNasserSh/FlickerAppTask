@@ -10,7 +10,6 @@ import Foundation
 import Moya
 import RxSwift
 class ImageDownloadManger {
-    lazy var downloadsInProgress: [IndexPath: Operation] = [:]
     lazy var downloadQueue: OperationQueue = {
         var queue = OperationQueue()
         queue.name = "Download queue"
@@ -21,7 +20,6 @@ class ImageDownloadManger {
         = OperationQueueScheduler(operationQueue: downloadQueue)
     let imageCache = NSCache<NSString, UIImage>()
     var bag = DisposeBag()
-    let session = URLSession.shared
 }
 // Mark : Downloader
 extension ImageDownloadManger {

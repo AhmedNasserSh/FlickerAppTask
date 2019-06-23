@@ -17,8 +17,3 @@ struct APIConstant {
     static let baseURL = production
 }
 
-struct ErrorMessage {
-    static let unknownAPIError = "Service is currently unavailable."
-    static let unavailableData = "Data is currently unavailable"
-    static let unauthenticatedError = "Your session has expired. Please re-login."
-}

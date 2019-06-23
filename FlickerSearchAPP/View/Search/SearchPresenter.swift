@@ -94,7 +94,7 @@ extension SearchPresenter {
             self.view?.errorMessage(error: currentType == .image ? "No Images Available":"No Groups Available")
         }
     }
-    
+    //download images
     func loadImageFrom(searchItem: [Mappable],indexPath:IndexPath,type:SearchViewType) {
         LoggerRepo.logInfo("SearchPresenter:loadImageFrom")
         LoggerRepo.logDebug("SearchPresenter:loadImageFrom,Parmters:(searchItem: [Mappable],indexPath:IndexPath,type:SearchViewType)")
@@ -108,7 +108,7 @@ extension SearchPresenter {
             self.view?.setImage(image: UIImage(named: "no_image")!, indexPath: indexPath)
         }
     }
-    
+    //adding Ks and Ms to group numbers
     func prepareGroups(searchItem:[Mappable]) {
         LoggerRepo.logInfo("SearchPresenter:prepareGroups")
         LoggerRepo.logDebug("SearchPresenter:prepareGroups,Parmters:(searchItem:[Mappable])")
