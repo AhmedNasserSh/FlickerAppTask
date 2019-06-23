@@ -22,7 +22,10 @@ class SearchPresenter:BasePresenter<SearchView> {
     var currentType :SearchViewType = .image
     var currentMappleItem :[Mappable]?
     var page = 0
+    
     func performQuery(cellItems:[CellSectionModel],query:String,page:Int,type:SearchViewType) {
+        LoggerRepo.logInfo("SearchPresenter:performQuery")
+        LoggerRepo.logDebug("SearchPresenter:performQuery,Parmters:(cellItems:[CellSectionModel],query:String,page:Int,type:SearchViewType)")
         self.currentMappleItem = cellItems.count > 0 ?  cellItems[0].items : []
         self.currentType = type
         self.page = page
@@ -32,35 +35,47 @@ class SearchPresenter:BasePresenter<SearchView> {
             searchGroup(query: query, page: page)
         }
     }
+    
     // Mark : Search Iamges
     func searchPhoto(query:String,page:Int) {
+        LoggerRepo.logInfo("SearchPresenter:searchPhoto")
+        LoggerRepo.logDebug("SearchPresenter:searchPhoto,Parmters:(query:String,page:Int)")
         self.view?.startLoading()
         SearchRepo.getImagesByQuery(query: query, page: page) { (success, model) in
             self.view?.finishLoading()
             if success {
                 guard let response = (model as? FlickerResponse) ,let searchItem = response.response , let images = searchItem.photos  else{
                     self.view?.errorMessage(error: "No Images Available")
+                    LoggerRepo.logWarn("SearchPresenter:searchPhoto,Error:Error in casting Images model")
                     return
                 }
                 self.setItems(items: images)
             }else{
                 self.view?.errorMessage(error: "No Images Available")
+                LoggerRepo.logWarn("SearchPresenter:searchPhoto,Error:Error in Loading images Api")
+
             }
         }
     }
+    
     // Mark : Search Groups
     func searchGroup(query:String,page:Int) {
+        LoggerRepo.logInfo("SearchPresenter:searchGroup")
+        LoggerRepo.logDebug("SearchPresenter:searchGroup,Parmters:(query:String,page:Int)")
         self.view?.startLoading()
         SearchRepo.getGroupsByQuery(query: query, page: page) { (success, model) in
             self.view?.finishLoading()
             if success {
                  guard let response = (model as? FlickerResponse) ,let searchItem = response.groupResponse , let groups = searchItem.groups else{
                     self.view?.errorMessage(error: "No Groups Available")
+                    LoggerRepo.logWarn("SearchPresenter:searchPhoto,Error:Error in casting Groups model")
                     return
                 }
                 self.prepareGroups(searchItem: groups)
             }else{
                 self.view?.errorMessage(error: "No Groups Available")
+                LoggerRepo.logWarn("SearchPresenter:searchPhoto,Error:Error in Loading images Api")
+
             }
         }
     }
@@ -70,6 +85,8 @@ class SearchPresenter:BasePresenter<SearchView> {
 extension SearchPresenter {
     // append current items to new items
     func setItems(items:[Mappable]) {
+        LoggerRepo.logInfo("SearchPresenter:setItems")
+        LoggerRepo.logDebug("SearchPresenter:setItems,Parmters:(items:[Mappable])")
         let cellItems =  [CellSectionModel(header:"", items: (currentMappleItem ?? []) + items)]
         if cellItems[0].items.count > 0 {
             self.view?.setItem(cellItems: cellItems, page: page)
@@ -77,7 +94,10 @@ extension SearchPresenter {
             self.view?.errorMessage(error: currentType == .image ? "No Images Available":"No Groups Available")
         }
     }
+    
     func loadImageFrom(searchItem: [Mappable],indexPath:IndexPath,type:SearchViewType) {
+        LoggerRepo.logInfo("SearchPresenter:loadImageFrom")
+        LoggerRepo.logDebug("SearchPresenter:loadImageFrom,Parmters:(searchItem: [Mappable],indexPath:IndexPath,type:SearchViewType)")
         let url = type == .image ? (searchItem[indexPath.row] as? Photo)?.getImageURL() :(searchItem[indexPath.row] as? Group)?.getGroupIconURL()
         if url != nil {
             imageRepo.getImageFrom(url: url!) { (image) in
@@ -90,6 +110,8 @@ extension SearchPresenter {
     }
     
     func prepareGroups(searchItem:[Mappable]) {
+        LoggerRepo.logInfo("SearchPresenter:prepareGroups")
+        LoggerRepo.logDebug("SearchPresenter:prepareGroups,Parmters:(searchItem:[Mappable])")
         let groups = searchItem.map { (element) -> Mappable in
             if let group = element as? Group {
                 let members = Float (group.members ?? "0") ?? 0
@@ -104,6 +126,8 @@ extension SearchPresenter {
     }
 
     func loadMore(indexPath: IndexPath,cellItems:[CellSectionModel],query:String,page:Int,type:SearchViewType) {
+        LoggerRepo.logInfo("SearchPresenter:loadMore")
+        LoggerRepo.logDebug("SearchPresenter:loadMore,Parmters:(indexPath: IndexPath,cellItems:[CellSectionModel],query:String,page:Int,type:SearchViewType)")
         let currentItems = cellItems.count > 0 ?  cellItems[0].items : []
         if indexPath.row == currentItems.count - 4 {
             self.performQuery(cellItems: cellItems, query: query, page: page + 1, type: type)

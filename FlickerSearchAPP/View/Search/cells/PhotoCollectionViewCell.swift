@@ -10,6 +10,8 @@ import UIKit
 
 class PhotoCollectionViewCell: BaseCollectionViewCell {
     func reset() {
+        LoggerRepo.logInfo("PhotoCollectionViewCell:reset")
+        LoggerRepo.logDebug("PhotoCollectionViewCell:reset,Parmters:()")
         self.imageView.image = #imageLiteral(resourceName: "no_image")
     }
 }

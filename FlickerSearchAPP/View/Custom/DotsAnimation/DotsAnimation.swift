@@ -11,6 +11,8 @@ import UIKit
 class DotsAnimation {
     
     func stopDotsAnimation(dots:UIView?) {
+        LoggerRepo.logInfo("DotsAnimation:stopDotsAnimation")
+        LoggerRepo.logDebug("DotsAnimation:stopDotsAnimation,Parmters:(dots:UIView?)")
         if dots != nil {
             for subview in (dots?.subviews)! {
                 subview.removeFromSuperview()
@@ -20,6 +22,8 @@ class DotsAnimation {
     }
     
     func startDotsAnimation(superView:UIView, dotsColor:UIColor) -> UIView {
+        LoggerRepo.logInfo("DotsAnimation:startDotsAnimation")
+        LoggerRepo.logDebug("DotsAnimation:startDotsAnimation,Parmters:(superView:UIView, dotsColor:UIColor) -> UIView ")
         let dots = self.buildView(superView: superView, dotsColor: dotsColor)
         animateWithKeyframes(dotToAnimate: dots.subviews[0], delay: 0.0)
         animateWithKeyframes(dotToAnimate: dots.subviews[1], delay: 0.3)
@@ -28,6 +32,8 @@ class DotsAnimation {
     }
     
     private func buildView(superView:UIView, dotsColor:UIColor) -> UIView {
+        LoggerRepo.logInfo("DotsAnimation:buildView")
+        LoggerRepo.logDebug("DotsAnimation:buildView,Parmters:(superView:UIView, dotsColor:UIColor) -> UIView ")
         let dots = UIView(frame: CGRect(x:0 , y: 0, width: 50, height: 50))
         dots.backgroundColor = UIColor(white: 1, alpha: 0)
         let numberDots = CGFloat(3)
@@ -46,6 +52,8 @@ class DotsAnimation {
     }
     
     private func animateWithKeyframes(dotToAnimate:UIView, delay:Double) {
+        LoggerRepo.logInfo("DotsAnimation:animateWithKeyframes")
+        LoggerRepo.logDebug("DotsAnimation:animateWithKeyframes,Parmters:(dotToAnimate:UIView, delay:Double) ")
         UIView.animateKeyframes(
             withDuration: 0.9,
             delay: delay,

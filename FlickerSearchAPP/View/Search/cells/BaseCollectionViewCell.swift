@@ -11,6 +11,8 @@ import UIKit
 class BaseCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     func loadImage(_ image:UIImage) {
+        LoggerRepo.logInfo("BaseCollectionViewCell:loadImage")
+        LoggerRepo.logDebug("BaseCollectionViewCell:loadImage,Parmters:(_ image:UIImage)")
         self.imageView.image = image
     }
 }

@@ -51,12 +51,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="233" height="178"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="efw-hv-qwn">
-                                                            <rect key="frame" x="70" y="64" width="155" height="15"/>
+                                                            <rect key="frame" x="70" y="61" width="155" height="15"/>
                                                             <fontDescription key="fontDescription" name="Rockwell-Bold" family="Rockwell" pointSize="15"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="qrZ-GT-tRk">
-                                                            <rect key="frame" x="70" y="87" width="155" height="30"/>
+                                                            <rect key="frame" x="70" y="84" width="155" height="30"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wB0-xe-WMC">
                                                                     <rect key="frame" x="0.0" y="0.0" width="73.5" height="30"/>
@@ -126,7 +126,7 @@
                                             <constraint firstItem="efw-hv-qwn" firstAttribute="leading" secondItem="XkA-Ho-VvA" secondAttribute="trailing" constant="5" id="L7f-cN-jaB"/>
                                             <constraint firstItem="XkA-Ho-VvA" firstAttribute="leading" secondItem="PbY-eM-uYy" secondAttribute="leading" constant="5" id="NcL-gE-g7H"/>
                                             <constraint firstAttribute="bottom" secondItem="7XE-QW-ErW" secondAttribute="bottom" id="WUt-0H-OWn"/>
-                                            <constraint firstItem="efw-hv-qwn" firstAttribute="top" secondItem="XkA-Ho-VvA" secondAttribute="top" constant="5" id="ZsL-D9-6eX"/>
+                                            <constraint firstItem="efw-hv-qwn" firstAttribute="top" secondItem="XkA-Ho-VvA" secondAttribute="top" constant="2" id="ZsL-D9-6eX"/>
                                         </constraints>
                                         <size key="customSize" width="233" height="178"/>
                                         <connections>

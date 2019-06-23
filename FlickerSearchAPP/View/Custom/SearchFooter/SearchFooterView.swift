@@ -20,11 +20,15 @@ class SearchFooterView: UICollectionReusableView {
     }
     
     func configure () {
+        LoggerRepo.logInfo("SearchFooterView:configure")
+        LoggerRepo.logDebug("SearchFooterView:configure,Parmters:()")
         animationDots = animation.startDotsAnimation(superView: progressView, dotsColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))
         progressView.addSubview(animationDots!)
     }
     
     func dismiss() {
+        LoggerRepo.logInfo("SearchFooterView:dismiss")
+        LoggerRepo.logDebug("SearchFooterView:dismiss,Parmters:()")
         animation.stopDotsAnimation(dots: animationDots)
     }
 

@@ -35,7 +35,7 @@ class FlickerSearchAppBusiness: XCTestCase {
         searchVC?.presenter.performQuery(cellItems: [], query: "grass", page: 1, type: .group)
         let pred = NSPredicate(format: "%@ != nil", searchVC?.searchItems.value ?? [])
         let exp = expectation(for: pred, evaluatedWith: searchVC as Any, handler: nil)
-        let res = XCTWaiter.wait(for: [exp], timeout: 5.0)
+        let res = XCTWaiter.wait(for: [exp], timeout: 8.0)
         if res == XCTWaiter.Result.completed {
             XCTAssert(searchVC?.searchItems.value.count ?? 0 > 0, "Image Api dosen't work properly")
         }

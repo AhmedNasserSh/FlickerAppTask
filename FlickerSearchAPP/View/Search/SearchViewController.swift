@@ -29,7 +29,8 @@ class SearchViewController: BaseViewController {
 extension SearchViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSLog("SearchViewController :%@ called", "viewDidLoad")
+        LoggerRepo.logInfo("SearchViewController:viewDidLoad")
+        LoggerRepo.logDebug("SearchViewController:viewDidLoad,Parmters:()")
         presenter.attachView(view: self)
         registerFooterCell()
         configureCollectionViewDataSource()
@@ -40,12 +41,16 @@ extension SearchViewController {
     }
  
     override func viewDidAppear(_ animated: Bool) {
+        LoggerRepo.logInfo("SearchViewController:viewDidAppear")
+        LoggerRepo.logDebug("SearchViewController:viewDidAppear,Parmters:(_ animated: Bool)")
         setupFilterSegmentedContol()
     }
 }
 // Mark : filter Segmented Control
 extension SearchViewController {
     func setupFilterSegmentedContol(){
+        LoggerRepo.logInfo("SearchViewController:setupFilterSegmentedContol")
+        LoggerRepo.logDebug("SearchViewController:setupFilterSegmentedContol,Parmters:()")
         filterSegmentedControl.rx.selectedSegmentIndex
             .subscribe(onNext: { [unowned self] index in
                 self.currentType = index == 0 ? .image :.group
@@ -58,6 +63,8 @@ extension SearchViewController {
 // Mark: Configure Search bar
 extension SearchViewController {
     func configureSearchBar() {
+        LoggerRepo.logInfo("SearchViewController:configureSearchBar")
+        LoggerRepo.logDebug("SearchViewController:configureSearchBar,Parmters:()")
         searchBar.rx.searchButtonClicked
             .subscribe(onNext: { [unowned self]() in
                 if let text = self.searchBar.text , text.count  > 0 {
@@ -67,6 +74,8 @@ extension SearchViewController {
     }
     
     func searchBarDidBeginEditing(){
+        LoggerRepo.logInfo("SearchViewController:searchBarDidBeginEditing")
+        LoggerRepo.logDebug("SearchViewController:searchBarDidBeginEditing,Parmters:()")
         searchBar.rx.textDidBeginEditing
             .subscribe(onNext: { [unowned self] in
                 self.page = 1
@@ -75,6 +84,8 @@ extension SearchViewController {
     }
     
     func searchBarCancelButton(){
+        LoggerRepo.logInfo("SearchViewController:searchBarCancelButton")
+        LoggerRepo.logDebug("SearchViewController:searchBarCancelButton,Parmters:()")
         searchBar.rx.cancelButtonClicked
             .subscribe(onNext: { [unowned self] in
                 self.searchBar.text = ""
@@ -86,6 +97,8 @@ extension SearchViewController {
 // Mark : SearchView  Delegate
 extension SearchViewController :SearchView {
     func reset(searchQuery:String){
+        LoggerRepo.logInfo("SearchViewController:reset")
+        LoggerRepo.logDebug("SearchViewController:reset,Parmters:(searchQuery:String)")
         self.searchItems.accept([])
         self.query = searchQuery
         self.useProgress = true
@@ -95,10 +108,14 @@ extension SearchViewController :SearchView {
     }
     
     func search(query:String,page:Int) {
+        LoggerRepo.logInfo("SearchViewController:search")
+        LoggerRepo.logDebug("SearchViewController:search,Parmters:(query:String,page:Int)")
         self.presenter.performQuery(cellItems:self.searchItems.value,query: query, page: page, type: currentType)
     }
     
     func setItem(cellItems:[CellSectionModel],page:Int) {
+        LoggerRepo.logInfo("SearchViewController:setItem")
+        LoggerRepo.logDebug("SearchViewController:setItem,Parmters:(cellItems:[CellSectionModel],page:Int)")
         self.useProgress = false
         self.page = page
         self.searchItems.accept(cellItems)
@@ -106,12 +123,16 @@ extension SearchViewController :SearchView {
     }
     
     func setImage(image: UIImage, indexPath: IndexPath) {
+        LoggerRepo.logInfo("SearchViewController:setImage")
+        LoggerRepo.logDebug("SearchViewController:setImage,Parmters:(image: UIImage, indexPath: IndexPath)")
         if let cell = imageCollectionView.cellForItem(at: indexPath) as? BaseCollectionViewCell {
             cell.loadImage(image)
         }
     }
     
     override func errorMessage(error: String?) {
+        LoggerRepo.logInfo("SearchViewController:errorMessage")
+        LoggerRepo.logDebug("SearchViewController:errorMessage,Parmters:(error: String?)")
         errorView.isHidden = false
         imageCollectionView.isHidden = true
         errorLabel.text = error

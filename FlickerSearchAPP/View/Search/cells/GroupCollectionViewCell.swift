@@ -14,6 +14,8 @@ class GroupCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var photoLabel: UILabel!
 
     func configure(group:Group) {
+        LoggerRepo.logInfo("GroupCollectionViewCell:configure")
+        LoggerRepo.logDebug("GroupCollectionViewCell:configure,Parmters:()")
         self.nameLabel.text = group.name
         self.membersLabel.text = group.members
         self.photoLabel.text = group.poolCount

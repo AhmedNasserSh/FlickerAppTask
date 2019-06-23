@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     func setupLoaderConfigerations() {
-        
+        LoggerRepo.logInfo("AppDelegate:setupLoaderConfigerations")
+        LoggerRepo.logDebug("AppDelegate:setupLoaderConfigerations,Parmters:()")
         let configuration = KVNProgressConfiguration()
         
         configuration.statusColor = UIColor.white
