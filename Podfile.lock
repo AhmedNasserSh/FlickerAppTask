@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.8.2)
   - Differentiator (3.1.0)
   - IQKeyboardManagerSwift (6.3.0)
+  - Kingfisher (4.8.1)
   - KVNProgress (2.3.5)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
@@ -30,6 +31,7 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - Kingfisher (~> 4.8.0)
   - KVNProgress
   - Moya-ObjectMapper/RxSwift
   - Moya/RxSwift (~> 12.0)
@@ -43,6 +45,7 @@ SPEC REPOS:
     - Alamofire
     - Differentiator
     - IQKeyboardManagerSwift
+    - Kingfisher
     - KVNProgress
     - Moya
     - Moya-ObjectMapper
@@ -56,6 +59,7 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  Kingfisher: 868c1149679a7ab6869be118faa9b5aed154aaf0
   KVNProgress: d7046cce142f1aeb740db39dc3cacfe910fac354
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Moya-ObjectMapper: c514b5eafcfd5e260f85f7a5bf66895a217e2b37
@@ -65,6 +69,6 @@ SPEC CHECKSUMS:
   RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
 
-PODFILE CHECKSUM: 4e21c39bd9fda80b4014c63ac5fcf15484fa58a9
+PODFILE CHECKSUM: dda0299c7385bd826079133cd5584f78a74f55a2
 
 COCOAPODS: 1.5.3

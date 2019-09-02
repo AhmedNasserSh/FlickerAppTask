@@ -7,11 +7,9 @@
 //
 
 import UIKit
-
+import Kingfisher
 class PhotoCollectionViewCell: BaseCollectionViewCell {
-    func reset() {
-        LoggerRepo.logInfo("PhotoCollectionViewCell:reset")
-        LoggerRepo.logDebug("PhotoCollectionViewCell:reset,Parmters:()")
-        self.imageView.image = #imageLiteral(resourceName: "no_image")
+    func setPhoto(_ photo:Photo) {
+        imageView.kf.setImage(with: photo.getImageURL(), placeholder: UIImage(named: "no_image"))
     }
 }

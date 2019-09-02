@@ -7,17 +7,16 @@
 //
 
 import UIKit
-
+import Kingfisher
 class GroupCollectionViewCell: BaseCollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var membersLabel: UILabel!
     @IBOutlet weak var photoLabel: UILabel!
 
     func configure(group:Group) {
-        LoggerRepo.logInfo("GroupCollectionViewCell:configure")
-        LoggerRepo.logDebug("GroupCollectionViewCell:configure,Parmters:()")
         self.nameLabel.text = group.name
         self.membersLabel.text = group.members
         self.photoLabel.text = group.poolCount
+        imageView.kf.setImage(with: group.getGroupIconURL(), placeholder: UIImage(named: "no_image"))
     }
 }

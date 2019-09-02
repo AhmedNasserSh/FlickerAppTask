@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C559334B9B61D373985E3283D466B77E"
+               BlueprintIdentifier = "1C4D0E3C5997508ADB654A04A05F14FB"
                BuildableName = "Pods_FlickerSearchAPP.framework"
                BlueprintName = "Pods-FlickerSearchAPP"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C559334B9B61D373985E3283D466B77E"
+            BlueprintIdentifier = "1C4D0E3C5997508ADB654A04A05F14FB"
             BuildableName = "Pods_FlickerSearchAPP.framework"
             BlueprintName = "Pods-FlickerSearchAPP"
             ReferencedContainer = "container:Pods.xcodeproj">

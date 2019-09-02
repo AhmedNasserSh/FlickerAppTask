@@ -43,7 +43,6 @@
 		BEA224DA22B69781006A3C32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA224D922B69781006A3C32 /* Assets.xcassets */; };
 		BEA224DD22B69781006A3C32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA224DB22B69781006A3C32 /* LaunchScreen.storyboard */; };
 		BEA224E822B69781006A3C32 /* FlickerSearchAPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA224E722B69781006A3C32 /* FlickerSearchAPPTests.swift */; };
-		BEE59E69231CF99B00BD80AE /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE59E68231CF99B00BD80AE /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,7 +97,6 @@
 		BEA224E322B69781006A3C32 /* FlickerSearchAPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickerSearchAPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA224E722B69781006A3C32 /* FlickerSearchAPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlickerSearchAPPTests.swift; sourceTree = "<group>"; };
 		BEA224E922B69781006A3C32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEE59E68231CF99B00BD80AE /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FCAA3891778DF7FB9E26BA51 /* Pods_FlickerSearchAPP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlickerSearchAPP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				BE3C010D22B9EEAE0046B69F /* cells */,
-				BEE59E68231CF99B00BD80AE /* SearchViewController.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -483,6 +480,7 @@
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/KVNProgress/KVNProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -497,6 +495,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KVNProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -532,7 +531,6 @@
 				BE1CB48C22B7AE3F008C60D1 /* Constant.swift in Sources */,
 				BE58DDAA22BE612100ECDFF2 /* GroupCollectionViewCell.swift in Sources */,
 				BE14FA7422B8DC6B00C76B18 /* ImageDownloadManger.swift in Sources */,
-				BEE59E69231CF99B00BD80AE /* SearchViewController.swift in Sources */,
 				BE58DDA122BD8C0A00ECDFF2 /* DotsAnimation.swift in Sources */,
 				BE3C010F22B9EED70046B69F /* PhotoCollectionViewCell.swift in Sources */,
 				BE58DD9922BD55B400ECDFF2 /* SearchFooterView.swift in Sources */,

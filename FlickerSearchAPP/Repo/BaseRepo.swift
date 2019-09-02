@@ -12,8 +12,6 @@ import ObjectMapper
 typealias ApiHandler =  (_ success: Bool, _ dataModel: BaseModel?) -> Void
 class BaseRepo<T> where T:BaseModel {
     static func handleResult(_ json:Any?,completion:ApiHandler) {
-        LoggerRepo.logInfo("BaseRepo:handleResult")
-        LoggerRepo.logDebug("BaseRepo:handleResult ,Parmters:(_ json:Any?,completion:ApiHandler)")
         let model = Mapper<T>().map(JSONObject: json)
         if model?.statCode == nil {
             completion(true,model)
