@@ -212,11 +212,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="errorLabel" destination="CiI-W1-opK" id="fff-Fr-7z2"/>
-                        <outlet property="errorView" destination="FAL-7s-Xe6" id="UKP-3b-Wix"/>
-                        <outlet property="filterSegmentedControl" destination="R4s-6e-AQH" id="VeH-EE-qS4"/>
-                        <outlet property="imageCollectionView" destination="g35-42-1RQ" id="y1K-hR-Zcz"/>
-                        <outlet property="searchBar" destination="BSS-Ru-7U5" id="faQ-gV-Wa1"/>
+                        <outlet property="errorLabel" destination="CiI-W1-opK" id="wvO-z6-69q"/>
+                        <outlet property="errorrVIew" destination="FAL-7s-Xe6" id="uzh-Xt-u73"/>
+                        <outlet property="filterSegmented" destination="R4s-6e-AQH" id="arL-1p-qNL"/>
+                        <outlet property="imageCollectionView" destination="g35-42-1RQ" id="LqP-vH-4Sp"/>
+                        <outlet property="searchBar" destination="BSS-Ru-7U5" id="rIF-Lb-gtF"/>
                         <outlet property="searchDisplayController" destination="iaU-u7-6F5" id="Yae-ie-mGL"/>
                     </connections>
                 </viewController>
