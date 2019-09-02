@@ -15,10 +15,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var filterSegmented: UISegmentedControl!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var errorrVIew: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+
 
 }

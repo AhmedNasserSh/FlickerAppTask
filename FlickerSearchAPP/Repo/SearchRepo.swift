@@ -22,12 +22,10 @@ class SearchRepo :BaseRepo<FlickerResponse>{
             .request(.getImages(query: query, page: page))
             .mapJSON()
             .subscribe(onSuccess: { (json) in
-                LoggerRepo.logDebug("SearchRepo:getImagesByQuery ,Response:\(json)")
                 self.handleResult(json, completion: completion)
             }) { (error) in
                 completion(false,nil)
                 LoggerRepo.logWarn("SearchRepo:getImagesByQuery ,Error:\(error)")
-
             }
             .disposed(by: disposeBag)
     }
